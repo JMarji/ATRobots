@@ -1,3 +1,7 @@
+/* C++ version of ATRLOCK
+
+*/
+
 #include <iostream>
 
 using namespace std;
