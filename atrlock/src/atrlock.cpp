@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include "atrlib.hpp"
 
 using namespace std;
 
@@ -41,7 +42,24 @@ string encode(string s){  //Ported by Ed Green
   return s;
 }
 
-string prepare(string s, string s1){
+string prepare(string s, string s1){ //Ported by Jordan LaComb
+  int i, j, k, l;
+  string s2;
+  if ((s1.length() == 0) || (s1[1] == ';')){
+     s1 = '';
+  }
+  else{
+    k = 0;
+    for (i = s1.length(); i >= 1; i--){
+        if (s1[1] = ';'){
+           k = 1;
+        }
+        if (k > 0){
+           s1 = lstr(s1, k-1); // ended here
+        }
+    }
+  }
+
   return "";
 }
 

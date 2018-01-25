@@ -44,7 +44,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 {$M 32768,0,655360}
 program atrlock;
 
-uses atr2func, filelib;
+uses stuff, filelib;
 
 const
  locktype = 3;
