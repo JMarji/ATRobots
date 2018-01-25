@@ -1,7 +1,3 @@
-/* C++ version of ATRLOCK
-
-*/
-
 #include <iostream>
 #include <cstdlib>
 
@@ -9,14 +5,19 @@ using namespace std;
 
 #define locktype 3
 string encode(string s);
-string prepare(string s, string s1);
-void write_line(string s, string s1);
 
 string fn1, fn2, s, s1, s2, lock_code;
 char f1, f2;
 int i, j, k, lock_pos, lock_dat, this_dat;
 
 int main(int argc, char* argv[]){
+  if (argc < 3){
+    std::cerr << "Need string and number\n";
+    return EXIT_FAILURE;
+  }
+  lock_code = argv[2];
+  cout << (encode(argv[1]));
+  cout << ("\n");
   return EXIT_SUCCESS;
 }
 
@@ -39,12 +40,4 @@ string encode(string s){  //Ported by Ed Green
     }
   }
   return s;
-}
-
-string prepare(string s, string s1){
-  return "";
-}
-
-void write_line(string s, string s1){
-
 }
