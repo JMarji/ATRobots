@@ -7,6 +7,7 @@
 #include "atrlib.hpp"
 
 using namespace std;
+using namespace atrlib;
 
 #define locktype 3
 string encode(string s);
@@ -18,6 +19,18 @@ char f1, f2;
 int i, j, k, lock_pos, lock_dat, this_dat;
 
 int main(int argc, char* argv[]){
+  lock_pos = 0;
+  lock_dat = 0;
+  if ((argc < 2) || (argc > 3)){
+     cout << "Usage: ATRLOCK <robot[.at2]> [locked[.atl]]";
+     exit(0); //Check later
+  }
+  fn1 = btrim(ucase(argv[1]));
+  if (fn1 == base_name(fn1)){
+    fn1 = fn1+'.AT2'
+  }
+
+
   return EXIT_SUCCESS;
 }
 
@@ -51,18 +64,38 @@ string prepare(string s, string s1){ //Ported by Jordan LaComb
   else{
     k = 0;
     for (i = s1.length(); i >= 1; i--){
-        if (s1[1] = ';'){
+        if (s1[1] == ';'){
            k = 1;
         }
-        if (k > 0){
-           s1 = lstr(s1, k-1); // ended here
-        }
+    }
+    if (k > 0){
+       s1 = lstr(s1, k-1);
     }
   }
-
-  return "";
+  s2 = '';
+  for (i = 1; i < s1.length(); i++){
+      if (s1[i] != (' ' || char(8) || char(9) || char(10) || ',')){
+         s2 = s2 + s1[i];
+      }
+      else{
+        if (s2 != ''){
+           s = s + s2 + '';
+           s2 = '';
+        }
+      }
+  }
+  if (s2 != ''){
+     s = s + s2;
+  }
+  return s;
 }
 
-void write_line(string s, string s1){
-
+void write_line(string s, string s1) //Ported by Andrew Delia and Joseph Marji
+{
+  s = prepare(s,s1);
+  if(s.length() > 0)
+  {
+    s=encode(s);
+    cout << f2 << s;
+  }
 }
