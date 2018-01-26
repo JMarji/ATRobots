@@ -27,8 +27,8 @@ int main(int argc, char* argv[]){
   }
   fn1 = btrim(ucase(argv[1]));
   if (fn1 == base_name(fn1)){
-    fn1 = fn1+'.AT2'
-  }
+    fn1 = fn1 +'.AT2'
+  } //ended here
 
 
   return EXIT_SUCCESS;
