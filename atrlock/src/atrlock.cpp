@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <fstream>
 #include "atrlib.hpp"
 
 using namespace std;
@@ -14,8 +15,9 @@ string encode(string s);
 string prepare(string s, string s1);
 void write_line(string s, string s1);
 
-string fn1, fn2, s, s1, s2, lock_code;
-char f1, f2;
+string fn1, fn2, s, s1, s2, lock_code; 
+ifstream inputFile;
+ofstream outputFile;
 int i, j, k, lock_pos, lock_dat, this_dat;
 
 int main(int argc, char* argv[]){
@@ -28,7 +30,33 @@ int main(int argc, char* argv[]){
   fn1 = btrim(ucase(argv[1]));
   if (fn1 == base_name(fn1)){
     fn1 = fn1 +'.AT2'
-  } //ended here
+  }
+  if (!(exist(fn1))){
+    cout << "Robot \"" << fn1 << "\" not found!";
+    exit(0);
+  }
+  if (argc == 2){
+    fn2 = btrim(ucase(argv[2]));
+  }
+  else{
+    fn2 = base_name(fn1) + '.ATL';
+  }
+  if (!(valid(fn2))){
+    cout << "Output name \"" << fn1 << "\" not valid!";
+    exit(0);
+  }
+  if (fn1 == fn2){
+    cout << "Filenames can not be the same!";
+    exit(0);
+  }
+  inputFile.open(fn1);
+  outputFile.open(fn2);
+  
+  cout << fn2 << ";------------------------------------------------------------------------------";
+  s = '';
+  while (!(fn1.eof()) && (s == '')){ //Ended here
+    
+  
 
 
   return EXIT_SUCCESS;
