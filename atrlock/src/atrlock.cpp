@@ -5,6 +5,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <fstream>
+#include <time.h>
 #include "atrlib.hpp"
 
 using namespace std;
@@ -18,6 +19,7 @@ void write_line(string s, string s1);
 string fn1, fn2, s, s1, s2, lock_code; 
 ifstream inputFile;
 ofstream outputFile;
+char currentDate[9];
 int i, j, k, lock_pos, lock_dat, this_dat;
 
 int main(int argc, char* argv[]){
@@ -52,12 +54,51 @@ int main(int argc, char* argv[]){
   inputFile.open(fn1);
   outputFile.open(fn2);
   
-  cout << fn2 << ";------------------------------------------------------------------------------";
+  //copy comment header
+  outputFile << ";------------------------------------------------------------------------------";
   s = '';
-  while (!(fn1.eof()) && (s == '')){ //Ended here
-    
+  while (!(inputFile.eof()) && (s == '')){
+    inputFile >> s;
+    s = btrim(s);
+    if (s[1] == ';'){
+      outputFile << s;
+      s = '';
+    }
+  }
+  //lock header
+  outputFile << ";------------------------------------------------------------------------------";
+  _strdate(currentDate);
+  outputFile << "; " << no_path(base_name(fn1)) << " Locked on " << currentDate;
+  outputFile << ";------------------------------------------------------------------------------";
+  lock_code = '';
+  k = (rand() % 21) + 20;
+  for (i = 1; i <= k; i++){
+    lock_code = lock_code + char((rand() % 32) + 65);
+  }
+  outputFile << "#LOCK" << locktype << " " << lock_code;
+  //decode lock code
+  for (i = 1; 1 <= lock_code.length(); i++){
+    lock_code = char(int(lock_code[i])-65);
+  }
+  cout << "Encoding " << fn1 << "...";
   
-
+  //encode robot
+  s = btrim(s);
+  if (length(s) > 0){
+    write_line('', ucase(s)); //change ucase() to c++ version
+  while (!(inputFile.eof()){
+    //read line
+    inputFile >> s1;
+    s = '';
+    s1 = btrim(ucase(s1));
+    //write line
+    write_line(s, s1);
+  }
+  cout << "Done. Use LOCK Format #" << locktype << "." << endl;
+  cout << "Only ATR2 v.2.08 or later can decode." << endl;
+  cout << "LOCKed robot saved as \"" << fn2 << "\" "; 
+  inputFile.close();
+  outputFile.close();       
 
   return EXIT_SUCCESS;
 }
@@ -124,6 +165,6 @@ void write_line(string s, string s1) //Ported by Andrew Delia and Joseph Marji
   if(s.length() > 0)
   {
     s=encode(s);
-    cout << f2 << s;
+    outputFile << s;
   }
 }
