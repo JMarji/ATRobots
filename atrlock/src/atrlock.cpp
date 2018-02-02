@@ -85,7 +85,8 @@ int main(int argc, char* argv[]){
   //encode robot
   s = btrim(s);
   if (length(s) > 0){
-    write_line('', ucase(s)); //change ucase() to c++ version
+    write_line('', ucase(s));
+  }
   while (!(inputFile.eof()){
     //read line
     inputFile >> s1;
@@ -164,7 +165,7 @@ void write_line(string s, string s1) //Ported by Andrew Delia and Joseph Marji
   s = prepare(s,s1);
   if(s.length() > 0)
   {
-    s=encode(s);
+    s = encode(s);
     outputFile << s;
   }
 }
