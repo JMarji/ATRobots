@@ -143,7 +143,7 @@ string prepare(string s, string s1){ //Ported by Jordan LaComb
     }
   }
   s2 = '';
-  for (i = 1; i < s1.length(); i++){
+  for (i = 1; i <= s1.length(); i++){
       if (s1[i] != (' ' || char(8) || char(9) || char(10) || ',')){
          s2 = s2 + s1[i];
       }
