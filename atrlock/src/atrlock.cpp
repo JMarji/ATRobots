@@ -134,8 +134,8 @@ string prepare(string s, string s1){ //Ported by Jordan LaComb
   else{
     k = 0;
     for (i = s1.length(); i >= 1; i--){
-        if (s1[1] == ';'){
-           k = 1;
+        if (s1[i] == ';'){
+           k = i;
         }
     }
     if (k > 0){
