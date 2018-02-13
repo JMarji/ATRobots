@@ -85,7 +85,8 @@ int main(int argc, char* argv[]){
   //encode robot
   s = btrim(s);
   if (length(s) > 0){
-    write_line('', ucase(s)); //change ucase() to c++ version
+    write_line('', ucase(s));
+  }
   while (!(inputFile.eof()){
     //read line
     inputFile >> s1;
@@ -133,8 +134,8 @@ string prepare(string s, string s1){ //Ported by Jordan LaComb
   else{
     k = 0;
     for (i = s1.length(); i >= 1; i--){
-        if (s1[1] == ';'){
-           k = 1;
+        if (s1[i] == ';'){
+           k = i;
         }
     }
     if (k > 0){
@@ -142,7 +143,7 @@ string prepare(string s, string s1){ //Ported by Jordan LaComb
     }
   }
   s2 = '';
-  for (i = 1; i < s1.length(); i++){
+  for (i = 1; i <= s1.length(); i++){
       if (s1[i] != (' ' || char(8) || char(9) || char(10) || ',')){
          s2 = s2 + s1[i];
       }
@@ -164,7 +165,7 @@ void write_line(string s, string s1) //Ported by Andrew Delia and Joseph Marji
   s = prepare(s,s1);
   if(s.length() > 0)
   {
-    s=encode(s);
+    s = encode(s);
     outputFile << s;
   }
 }
