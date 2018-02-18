@@ -44,4 +44,17 @@ using namespace std;
 #define max_queue 255
 #define max_config_points 12
 #define max_mines 63
-#define mine_blast 35 //start here
+#define mine_blast 35
+
+//simulator & graphics
+#define screen_scale    =0.46;
+#define screen_x        =5;
+#define screen_y        =5;
+#define robot_scale     =06;
+#define default_delay   =20;
+#define default_slice   =05;
+#define mine_circle     =trunc(mine_blast*screen_scale)+1; 
+#define blast_circle    =trunc(blast_radius*screen_scale)+1;
+#define mis_radius      =trunc(hit_range/2)+1;
+#define max_robot_lines =8;
+#define Gray50
