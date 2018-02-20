@@ -29,7 +29,7 @@ are met:
    Redistributions of source code must retain the above copyright notice,
    this list of conditions and the following disclaimer.
 
-   Redistributions in binary form must reproduce the above copyright notice, 
+   Redistributions in binary form must reproduce the above copyright notice,
    this list of conditions and the following disclaimer in the documentation
    and/or other materials provided with the distribution.
 
@@ -47,8 +47,8 @@ are met:
    contributers may be used to endorse or promote products derived
    from this software without specific prior written permission.
 
-THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND ANY 
-EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND ANY
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
 DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE FOR ANY
 DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
@@ -64,7 +64,7 @@ Program Advanced_T_Robots_2;
 
 uses dos, crt, graph, egavga, filelib, myfile, atr2func;
 
-{’á} {err}
+{ï¿½ï¿½} {err}
 
 const
  progname       ='AT-Robots';
@@ -93,7 +93,7 @@ const
  max_robots     =31;    {starts at 0, so total is max_robots+1}
  max_code       =1023;  {same here}
  max_op         =3;     {etc...}
- stack_size     =256;   
+ stack_size     =256;
  stack_base     =768;
  max_ram        =1023;  {but this does start at 0 (odd #, 2^n-1)}
  max_vars       =256;
@@ -395,27 +395,7 @@ begin
   end;
 end;
 
-procedure update_heat(n:integer);
-begin
- if graph_check(n) {FIFI} and (step_mode<=0) {/FIFI} then
- with robot[n]^ do
-  begin
-   robot_graph(n);
-   if heat>5 then
-    case stats_mode of
-     1:bar(030,23,029+(heat div 5),28);
-     2:bar(127,03,126+(heat div 20),08);
-     else bar(30,35,29+(heat div 5),40);
-    end;
-   setfillstyle(1,8);
-   if heat<500 then
-    case stats_mode of
-     1:bar(030+(heat div 5),23,129,28);
-     2:bar(127+(heat div 20),03,151,08);
-     else bar(30+(heat div 5),35,129,40);
-    end;
-  end;
-end;
+
 
 procedure robot_error(n,i:integer;ov:string);
 begin
@@ -1109,7 +1089,7 @@ begin
      parse1(n,plen,pp);
     end
    else
-    dec(plen); 
+    dec(plen);
 
 
    {--second pass, resolving !labels--}
@@ -1609,7 +1589,7 @@ begin
       begin
        circle(ltx[4],lty[4],round(max_sonar*screen_scale));
       end;
-     if armor>0 then 
+     if armor>0 then
       begin {only erase body if still alive, that way we leave a "corpse" when dead}
        line(ltx[1],lty[1],ltx[2],lty[2]);
        line(ltx[2],lty[2],ltx[3],lty[3]);
