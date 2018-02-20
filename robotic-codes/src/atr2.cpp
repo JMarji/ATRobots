@@ -2,10 +2,10 @@
 
 using namespace std;
 
-#define progname "AT-Robots"
+#define progname "Robotic-Codes"
 #define version "2.10"
-#define cnotice1 "Copyright 1997 ''99, Ed T. Toton III"
-#define cnotice2 "All Rights Reserved."
+#define cnotice1 "Copyright 2018 - SUNY Polytechnic Institute"
+#define cnotice2 "License: GPL V3"
 #define main_filename "ATR2"
 #define robot_ext "AT2"
 #define locked_ext ".AT2"
@@ -53,7 +53,7 @@ using namespace std;
 #define robot_scale     =06;
 #define default_delay   =20;
 #define default_slice   =05;
-#define mine_circle     =trunc(mine_blast*screen_scale)+1; 
+#define mine_circle     =trunc(mine_blast*screen_scale)+1;
 #define blast_circle    =trunc(blast_radius*screen_scale)+1;
 #define mis_radius      =trunc(hit_range/2)+1;
 #define max_robot_lines =8;
