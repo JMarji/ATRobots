@@ -105,7 +105,7 @@ namespace atrlib {
     return ;
   }
   void textxy(int x, int y, string s){
-    
+    // draw text on top of a graphical box
   }
   void coltextxy(int x, int y, string s, byte c){
 
