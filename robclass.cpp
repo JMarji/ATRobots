@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 
 class op_rec
@@ -68,6 +69,10 @@ class robot_rec
    //errorlog how should we implemnt the text data type
 
   public:
+    errorlog
+      {
+        
+      }
 
 }
 
