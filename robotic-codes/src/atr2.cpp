@@ -1,3 +1,9 @@
+#include <iostream>
+#include <cstdlib>
+#include "atrlib.hpp"
+#include "guilib.hpp"
+#include "termlib.hpp"
+
 #define screen_scale    =0.46;
 #define screen_x        =5;
 #define screen_y        =5;
