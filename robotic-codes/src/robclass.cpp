@@ -19,7 +19,9 @@ class op_rec
 class progtype
 {
   private:
-    prog_type[max_code] = new op_rec;
+  //  prog_type[max_code] = new op_rec;
+  op_rec prog_type[max_code];
+
 
   public:
 }
@@ -62,16 +64,16 @@ class robot_rec
 
     config = new config_rec; // robclass::config_rec ?? // line 158 in ATR2.PAS not sure how this would
     //good question to ask Dr.Confer
-    code = new prog_type;
+     prog_type code // code = new prog_type;
     //line 159 in ATR2.PAS should we make a char array or a string type?
    string name, fn;
-   mine[max_mines] = new mine_rec;
+   mine_rec mine[max_mines];
    //errorlog how should we implemnt the text data type
 
   public:
     errorlog
       {
-        
+
       }
 
 }
