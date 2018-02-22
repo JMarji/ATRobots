@@ -1,4 +1,4 @@
-#include <string> 
+#include <string>
 /* this is a port of ATR2FUNC.PAS*/
 /* TODO:
     String lstr(String, int)
@@ -48,6 +48,7 @@ namespace atrlib {
     void viewport(int x1, int y1, int x2, int y2);
     void main_viewport();
     void make_tables();
+    double radians_to_degrees(double radian);
     void box(int x1, int y1, int x2, int y2);
     void hole(int x1, int y1, int x2, int y2);
     void chirp();
