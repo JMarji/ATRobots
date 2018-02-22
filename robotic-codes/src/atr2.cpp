@@ -1,7 +1,5 @@
 #include <iostream>
 #include <cstdlib>
-#include <stdint.h>
-#include <cstdint>
 #include "atrlib.hpp"
 #include "guilib.hpp"
 #include "termlib.hpp"
@@ -21,9 +19,12 @@
 
 using namespace std;
 
-string parsetype[max_op];
+//string parsetype[max_op];
 
-robot_rec *robot_ptr;
+//robot_rec *robot_ptr;
+void init();
+void main_func();
+void shutdown();
 
 int main(int argc, char *argv[]){
   int errors = 0;
@@ -31,4 +32,13 @@ int main(int argc, char *argv[]){
   main_func();
   shutdown();
   return(errors);
+}
+
+void init(){
+}
+
+void main_func(){
+}
+
+void shutdown(){
 }
