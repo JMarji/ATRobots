@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cstdlib>
+#include <stdint.h>
+#include <cstdint>
 #include "atrlib.hpp"
 #include "guilib.hpp"
 #include "termlib.hpp"
@@ -22,3 +24,11 @@ using namespace std;
 string parsetype[max_op];
 
 robot_rec *robot_ptr;
+
+int main(int argc, char *argv[]){
+  int errors = 0;
+  init();
+  main_func();
+  shutdown();
+  return(errors);
+}

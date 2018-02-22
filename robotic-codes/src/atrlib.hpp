@@ -10,8 +10,8 @@ namespace atrlib {
     string lstr(string s1, int l);
     string ucase(string s);
     string btrim(string s1);
-    char hexnum(byte num);
-    string hexb(byte num);
+    char hexnum(unsigned char num);
+    string hexb(unsigned char num);
     string hex(uint num);
     float valuer(string i);
     long int value(string i);
@@ -22,11 +22,11 @@ namespace atrlib {
     string addfront(string b, int l);
     string addrear(string b, int l);
     string lcase(string s);
-    string space(byte i);
-    string repchar(char c, byte i);
+    string space(unsigned char i);
+    string repchar(char c, unsigned char i);
     string ltrim(string s1);
     string rtrim(string s1);
-    string rstr(string s1; int l);
+    string rstr(string s1, int l);
     int rol(int n, int k);
     int ror(int n, int k);
     int sal(int n, int k);
@@ -40,7 +40,7 @@ namespace atrlib {
     string bin(int n);
     string decimal(int num, int length);
     void textxy(int x, int y, string s);
-    void coltextxy(int x, int y, string s, byte c);
+    void coltextxy(int x, int y, string s, unsigned char c);
     void flushKey();
     void calibrate_timing();
     void time_delay(int n); //n=milliseconds
@@ -52,5 +52,5 @@ namespace atrlib {
     void hole(int x1, int y1, int x2, int y2);
     void chirp();
     void click();
-  }
+  };
 }
