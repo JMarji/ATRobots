@@ -1,16 +1,17 @@
-
+#include "atrlib.hpp"
 #include <iostream>
 #include <cstdlib>
-#include <string>
-#include "atrlib.hpp"
+#include <math.h>
 
+#define _USE_MATH_DEFINES
 using namespace std;
 
 namespace atrlib {
+  double sint[256], cost[256];
   string atrlib::lstr(string s1, int l){
     if (s1.length() <= 1){
       return s1;
-    }// write return variables in
+    }
     return ;
   }
   string ucase(string s){
@@ -19,10 +20,10 @@ namespace atrlib {
   string btrim(string s1){
     return ;
   }
-  char hexnum(byte num){
+  char hexnum(unsigned char num){
     return ;
   }
-  string hexb(byte num){
+  string hexb(unsigned char num){
     return ;
   }
   string hex(uint num){
@@ -55,10 +56,10 @@ namespace atrlib {
   string lcase(string s){
     return ;
   }
-  string space(byte i){
+  string space(unsigned char i){
     return ;
   }
-  string repchar(char c, byte i){
+  string repchar(char c, unsigned char i){
     return ;
   }
   string ltrim(string s1){
@@ -67,7 +68,7 @@ namespace atrlib {
   string rtrim(string s1){
     return ;
   }
-  string rstr(string s1; int l){
+  string rstr(string s1, int l){
     return ;
   }
   int rol(int n, int k){
@@ -109,14 +110,10 @@ namespace atrlib {
   void textxy(int x, int y, string s){
     // draw text on top of a graphical box
   }
-  void coltextxy(int x, int y, string s, byte c){
+  void coltextxy(int x, int y, string s, unsigned char c){
 
   }
-  void flushKey(){
-    while(kbhit()) //returns bool, function located in conio.h
-    {
-      getch(); //conio.h might not work on linux c fflush()
-    }
+  void FlushKey(){
 
   }
   void calibrate_timing(){
@@ -134,8 +131,21 @@ namespace atrlib {
   void main_viewport(){
 
   }
-  void make_tables(){
+  void make_tables()
+  {
+    int i, j, k;
 
+    for (i = 0; i <= 255; i++)
+    {
+      sint[i] = radians_to_degrees(sin(((double)i/128)*M_PI));
+      cost[i] = radians_to_degrees(cos(((double)i/128)*M_PI));
+    }
+  }
+
+  double radians_to_degrees (double radian)
+  {
+    double degrees = radian * (180.0/M_PI);
+    return degrees;
   }
   void box(int x1, int y1, int x2, int y2){
 
