@@ -26,7 +26,8 @@ void init();
 void main_func();
 void shutdown();
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[])
+{
   int errors = 0;
   init();
   main_func();
@@ -34,11 +35,17 @@ int main(int argc, char *argv[]){
   return(errors);
 }
 
-void init(){
+void init()
+{
+
 }
 
-void main_func(){
+void main_func()
+{
+
 }
 
-void shutdown(){
+void shutdown()
+{
+
 }
