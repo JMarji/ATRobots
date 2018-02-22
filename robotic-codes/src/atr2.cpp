@@ -3,6 +3,7 @@
 #include "atrlib.hpp"
 #include "guilib.hpp"
 #include "termlib.hpp"
+#include "errorloging.hpp"
 
 #define screen_scale    =0.46;
 #define screen_x        =5;

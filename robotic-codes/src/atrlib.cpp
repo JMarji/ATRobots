@@ -1,6 +1,8 @@
-#include "atrlib.hpp"
+
 #include <iostream>
 #include <cstdlib>
+#include <string>
+#include "atrlib.hpp"
 
 using namespace std;
 
@@ -8,7 +10,7 @@ namespace atrlib {
   string atrlib::lstr(string s1, int l){
     if (s1.length() <= 1){
       return s1;
-    }
+    }// write return variables in
     return ;
   }
   string ucase(string s){
@@ -110,7 +112,11 @@ namespace atrlib {
   void coltextxy(int x, int y, string s, byte c){
 
   }
-  void FlushKey(){
+  void flushKey(){
+    while(kbhit()) //returns bool, function located in conio.h
+    {
+      getch(); //conio.h might not work on linux c fflush()
+    }
 
   }
   void calibrate_timing(){

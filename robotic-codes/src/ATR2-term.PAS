@@ -1251,7 +1251,7 @@ begin
  graphix:=false; no_gfx:=false;
  sound_on:=true; timing:=true;
  matches:=1; played:=0; old_shields:=false;
- quit:=false; compile_only:=false;
+ quit:=false; compile_only:=false;readkey
  show_arcs:=false; debug_info:=false;
  show_cnotice:=true;
  show_source:=true;

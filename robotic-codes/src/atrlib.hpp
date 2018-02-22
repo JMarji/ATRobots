@@ -1,7 +1,9 @@
+#include <string> 
 /* this is a port of ATR2FUNC.PAS*/
 /* TODO:
     String lstr(String, int)
 */
+using namespace std;
 namespace atrlib {
   class atrlib{
   public:
@@ -39,7 +41,7 @@ namespace atrlib {
     string decimal(int num, int length);
     void textxy(int x, int y, string s);
     void coltextxy(int x, int y, string s, byte c);
-    void FlushKey();
+    void flushKey();
     void calibrate_timing();
     void time_delay(int n); //n=milliseconds
     void check_registration();
