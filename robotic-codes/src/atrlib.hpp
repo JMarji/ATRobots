@@ -41,7 +41,7 @@ namespace atrlib {
     string decimal(int num, int length);
     void textxy(int x, int y, string s);
     void coltextxy(int x, int y, string s, unsigned char c);
-    void flushKey();
+    void flushkey();
     void calibrate_timing();
     void time_delay(int n); //n=milliseconds
     void check_registration();

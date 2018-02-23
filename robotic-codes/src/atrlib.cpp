@@ -1,7 +1,10 @@
-#include "atrlib.hpp"
 #include <iostream>
 #include <cstdlib>
+#include <string>
 #include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "atrlib.hpp"
 
 #define _USE_MATH_DEFINES
 using namespace std;
@@ -113,8 +116,9 @@ namespace atrlib {
   void coltextxy(int x, int y, string s, unsigned char c){
 
   }
-  void FlushKey(){
-
+  void flushkey()
+  {
+    fflush(stdin); //this might affect portabliltiy
   }
   void calibrate_timing(){
 

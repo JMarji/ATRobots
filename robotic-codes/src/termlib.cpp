@@ -1,12 +1,12 @@
-#include "termlib.hpp"
 #include <iostream>
 #include <cstdlib>
+#include "termlib.hpp"
 
 using namespace std;
 
 namespace termlib {
 
-  void init() 
+  void init()
   {
     int i;
 
