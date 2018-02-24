@@ -120,6 +120,11 @@ namespace atrlib {
   {
     fflush(stdin); //this might affect portabliltiy
   }
+  void readkey()
+  {
+    int c;
+    c = getchar();
+  }
   void calibrate_timing(){
 
   }
