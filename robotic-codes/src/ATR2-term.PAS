@@ -181,7 +181,7 @@ var
  {--compiler variables--}
  f:text;
  numvars,numlabels,maxcode,lock_pos,lock_dat:integer;
- varname:array[1..max_vars] of string[max_var_len]; // ? enum? struck ? class ? 
+ varname:array[1..max_vars] of string[max_var_len]; // ? enum? struck ? class ?
  varloc:array[1..max_vars] of integer;
  labelname:array[1..max_vars] of string[max_var_len];
  labelnum:array[1..max_labels] of integer;
@@ -1250,8 +1250,8 @@ begin
  delay_per_sec:=0; windoze:=true;
  graphix:=false; no_gfx:=false;
  sound_on:=true; timing:=true;
- matches:=1; played:=0; old_shields:=false;read
- quit:=false; compile_only:=false;readkey
+ matches:=1; played:=0; old_shields:=false;
+ quit:=false; compile_only:=false;
  show_arcs:=false; debug_info:=false;
  show_cnotice:=true;
  show_source:=true;
@@ -1266,15 +1266,6 @@ begin
  game_delay:=default_delay;
  time_slice:=default_slice;
  for i:=0 to max_missiles do
- kill_count:=0;
- maxcode:=max_code;
- make_tables;
- randomize;
- num_robots:=-1;
- game_limit:=100000;
- game_cycle:=0;
- game_delay:=default_delay;
- time_slice:=default_slice;
   with missile[i] do
    begin a:=0; source:=-1; x:=0; y:=0; lx:=0; ly:=0; mult:=1; end;
 
