@@ -37,7 +37,16 @@ int main(int argc, char *argv[])
 
 void init()
 {
+  int i;
 
+  if(debugging_compiler || compile_by_line || show_code)
+  {
+    cout << "!!! Warning !!! Compiler Debugging enabled !!!" << '\n';
+    flushkey();
+    readkey(); // should readkey return its value
+    cout << "   " // cout << " return of readkey ? "
+    bool logging_errors
+  }
 }
 
 void main_func()
