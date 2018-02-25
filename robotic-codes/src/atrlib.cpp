@@ -17,8 +17,17 @@ namespace atrlib {
     }
     return ;
   }
-  string ucase(string s){
-    return ;
+  string ucase(string s)
+  {
+    int i;
+    if (s.length() >= 1)
+    {
+      for (i = 1; i <= s.length(); i++)
+      {
+        s[i] = toupper(s[i]);
+      }
+    }
+    return s;
   }
   string btrim(string s1){
     return ;
@@ -56,14 +65,43 @@ namespace atrlib {
   string addrear(string b, int l){
     return ;
   }
-  string lcase(string s){
-    return ;
+  string lcase(string s)
+  {
+    int i;
+    if (s.length() >= 1)
+    {
+      for (i = 1; i <= s.length(); i++)
+      {
+        s[i] = tolower(s[i]);
+      }
+    }
+    return s;
   }
-  string space(unsigned char i){
-    return ;
+  string space(unsigned char i)
+  {
+    string s;
+    int k;
+
+    s = '';
+    if (i > 0)
+    {
+      for (k = 1; k <= i; k++)
+        s = s + '';
+    }
+    return s;
   }
-  string repchar(char c, unsigned char i){
-    return ;
+  string repchar(char c, unsigned char i)
+  {
+    string s;
+    int k;
+
+    s = '';
+    if (i > 0)
+    {
+      for (k = 1; k <= i; k++)
+        s = s + c;
+    }
+    return s;
   }
   string ltrim(string s1){
     return ;
