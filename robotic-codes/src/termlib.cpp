@@ -35,17 +35,4 @@ missile_rec missile[max_missiles];
 
 FILE text;
 
-  void init()
-  {
-    int i;
-
-    if(debugging_compiler or compile_by_line or show_code)
-    {
-      cout << "!!! Warning !!! Compiler Debugging enabled !!!" << '\n';
-      flushkey();
-      readkey(); // should readkey return its value
-      cout << "   " // cout << " return of readkey ? "
-      bool logging_errors
-    }
-  }
 }
