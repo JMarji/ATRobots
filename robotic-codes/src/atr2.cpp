@@ -45,7 +45,39 @@ void init()
     flushkey();
     readkey(); // should readkey return its value
     cout << "   " // cout << " return of readkey ? "
-    bool logging_errors
+  }
+  logging_errors = false;
+  stats_mode = 0;
+  insane_missles = false;
+  insanity = 0;
+  delay_per_sec = 0;
+  windowze = true;
+  graphix = false; //add graphix to guilib
+  no_gfx = true; //possibly change to false for only command lines
+  sound_on = true; //in ATR2FUNC.PAS
+  timing = true;
+  matches = 1;
+  played = 0;
+  old_shields = false;
+  quit = false;
+  compile_only = false;
+  show_arcs = false;
+  debug_info = false;
+  show_cnotice = true;
+  show_source = true;
+  report = false;
+  kill_count = 0;
+  maxcode = max_code;
+  make_tables();
+  num_robots = -1;
+  game_limit = 100000;
+  game_cycle = 0;
+  game_delay = default_delay;
+  time_slice = default_slice;
+
+  for (i = 0; i <= max_missles; i++)
+  {
+    //Need to create a missle class
   }
 }
 
