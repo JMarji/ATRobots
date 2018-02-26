@@ -20,6 +20,12 @@ int varloc[(max_vars + 1)], labelnum[(max_labels + 1)];
 
 stringz varname[(max_vars + 1)], labelname[(max_vars + 1)];
 
+string lock_code;
+
+long int game_limit, game_cycle, matches, played, executed;
+//does long int have the neccesary amount of bits ? as it should ?
+
+
 //flag for viewing debugger panel vs. robot stats
 bool show_source, compile_only, old_shields, insane_missiles, debug_info, windoze,
 no_gfx, logging_errors, timing, show_arcs, quit, report, show_cnotice;

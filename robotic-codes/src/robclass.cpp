@@ -84,6 +84,53 @@ class missile_rec
     double x,y,lx,ly,mult,mspd;
     int source,a,hd,rad,lrad,max_rad;
 
-  private:
-
+  public:
+    void set_source(int x)
+    {
+      source = x;
+    }
+    void set_a(int x)
+    {
+      a = x;
+    }
+    void set_hd(int x)
+    {
+      hd = x;
+    }
+    void set_rad(int x)
+    {
+      rad = x;
+    }
+    void set_lrad(int x)
+    {
+      lrad = x;
+    }
+    void set_max_rad(int x)
+    {
+      max_rad = x;
+    }
+    void set_x(double num)
+    {
+      x = num;
+    }
+    void set_y(double x)
+    {
+      y = x;
+    }
+    void set_lx(double x)
+    {
+      lx = x;
+    }
+    void set_ly(double x)
+    {
+      ly = x;
+    }
+    void set_mult(double x)
+    {
+      mult = x;
+    }
+    void set_mspd(double x)
+    {
+      mspd = x;
+    }
 }
