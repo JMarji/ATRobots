@@ -11,6 +11,12 @@ using namespace std;
 
 namespace atrlib {
   double sint[256], cost[256];
+  long int delay_per_sec;
+  bool registered, graphix, sound_on;
+  string reg_name;
+  //word ? reg_num
+
+
   string atrlib::lstr(string s1, int l){
     if (s1.length() <= 1){
       return s1;
