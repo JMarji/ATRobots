@@ -7,7 +7,7 @@
 #include <iostream>
 
 using namespace std;
-
+#define byte uint8_t;
 #define progname "Robotic-Codes"
 #define version "2.10"
 #define cnotice1 "Copyright 2018 - SUNY Polytechnic Institute"
@@ -39,7 +39,7 @@ using namespace std;
 #define max_labels 256
 #define acceleration 4
 #define turn_rate 8
-#define max_vel 4 
+#define max_vel 4
 #define max_missiles 1023
 #define missie_spd 32
 #define hit_range 14

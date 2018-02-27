@@ -8,6 +8,7 @@
 #include "atrlib.hpp"
 
 #define _USE_MATH_DEFINES
+#define byte uint8_t;
 using namespace std;
 
 namespace atrlib {
@@ -15,7 +16,7 @@ namespace atrlib {
   long int delay_per_sec;
   bool registered, graphix, sound_on;
   string reg_name;
-  byte reg_num; 
+  byte reg_num;
 
 
   string atrlib::lstr(string s1, int l){
