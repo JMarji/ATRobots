@@ -6,7 +6,6 @@
 #include "errorloging.hpp"
 #include <iostream>
 
-using namespace std;
 #define byte uint8_t;
 #define progname "Robotic-Codes"
 #define version "2.10"
@@ -114,6 +113,7 @@ FILE text;
 void init();
 void main_func();
 void shutdown();
+void delete_compile_report();
 
 int main(int argc, char *argv[])
 {
@@ -194,6 +194,13 @@ void init()
   }
   cout << endl;
   delete_compile_report
+  if(argc > 0)
+  {
+    for(i=1 i <= argc )
+    {
+
+    }
+  }
 
 }
 
@@ -206,3 +213,15 @@ void shutdown()
 {
 
 }
+
+void delete_compile_report()
+{
+  ifstream input_file;
+  input_file.open((string)main_filename + (sting)compile_ext);
+  if(input_file.good((string)main_filename + (sting)compile_ext));
+  {
+    remove((string)main_filename + (sting)compile_ext));
+  }
+}
+
+void
