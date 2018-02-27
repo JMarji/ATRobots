@@ -15,7 +15,7 @@ namespace atrlib {
   long int delay_per_sec;
   bool registered, graphix, sound_on;
   string reg_name;
-  //word ? reg_num
+  byte reg_num; 
 
 
   string atrlib::lstr(string s1, int l){

@@ -129,6 +129,24 @@ void init()
     missile_object.set_ly(0);
     missile_object.set_mult(1);
   }
+  registered = false;
+  reg_name = 'Unregistered';    // all these vars are declared in atrlib.cpp
+  reg_num = 0xFFFF;
+  //check_registration();
+  cout << endl;
+  cout << progname << ' ' << version << ' ' << endl;
+  cout << cnotice1 << endl << cnotice2 << endl;
+  if(!(registered))
+  {
+    cout << 'Unregistered version' << endl;
+  }
+  else
+  {
+    cout << 'Registered to: ' << reg_name << endl;
+  }
+  cout << endl;
+  delete_compile_report
+
 }
 
 void main_func()
