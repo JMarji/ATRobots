@@ -36,8 +36,6 @@ int temp_mode;     //stores previous step_mode for return to step}
 int step_count;    //step counter used as break flag}
 bool step_loop;     //break flag for stepping}
 
-long int matches, played, game_limit;
-
 robot_ptr robot[(max_robots+2)];
 missile_rec missile[max_missiles];
 
