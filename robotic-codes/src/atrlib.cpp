@@ -179,10 +179,11 @@ namespace atrlib {
   } //n=milliseconds
   void check_registration()
   {
+    byte w;
     int i;
     ifstream inputFile;
     string s;
-
+    registered = false;
     inputFile.open("ATR2.REG");
     if (inputFile.good())
     {
@@ -194,9 +195,10 @@ namespace atrlib {
       for (i = 0; i <= s.length(); i++)
          w = w + (int)s[i];
 
-      w =
+      w = w ^ 0x5AA5;
+      if (w == reg_num)
+         registered = true;
     }
-
   }
   void viewport(int x1, int y1, int x2, int y2){
 
