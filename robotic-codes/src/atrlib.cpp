@@ -4,6 +4,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <fstream>
 #include "atrlib.hpp"
 
 #define _USE_MATH_DEFINES
@@ -28,15 +29,16 @@ namespace atrlib {
     int i;
     if (s.length() >= 1)
     {
-      for (i = 1; i <= s.length(); i++)
+      for (i = 0; i <= s.length(); i++)
       {
         s[i] = toupper(s[i]);
       }
     }
     return s;
   }
-  string btrim(string s1){
-    return ;
+  string btrim(string s1)
+  {
+    return ltrim(rtrim(s1));
   }
   char hexnum(unsigned char num){
     return ;
@@ -76,7 +78,7 @@ namespace atrlib {
     int i;
     if (s.length() >= 1)
     {
-      for (i = 1; i <= s.length(); i++)
+      for (i = 0; i <= s.length(); i++)
       {
         s[i] = tolower(s[i]);
       }
@@ -91,7 +93,7 @@ namespace atrlib {
     s = '';
     if (i > 0)
     {
-      for (k = 1; k <= i; k++)
+      for (k = 0; k <= i; k++)
         s = s + '';
     }
     return s;
@@ -175,7 +177,25 @@ namespace atrlib {
   void time_delay(int n){
 
   } //n=milliseconds
-  void check_registration(){
+  void check_registration()
+  {
+    int i;
+    ifstream inputFile;
+    string s;
+
+    inputFile.open("ATR2.REG");
+    if (inputFile.good())
+    {
+      getline(inputFile, reg_name);
+      getline(inputFile, reg_num);
+      inputFile.close();
+      w = 0;
+      s = btrim(ucase(reg_name));
+      for (i = 0; i <= s.length(); i++)
+         w = w + (int)s[i];
+
+      w =
+    }
 
   }
   void viewport(int x1, int y1, int x2, int y2){
