@@ -110,7 +110,7 @@ FILE text;
 //string parsetype[max_op];
 
 //robot_rec *robot_ptr;
-void init();
+void init(int argc);
 void main_func();
 void shutdown();
 void delete_compile_report();
@@ -118,13 +118,13 @@ void delete_compile_report();
 int main(int argc, char *argv[])
 {
   int errors = 0;
-  init();
+  init(argc);
   main_func();
   shutdown();
   return(errors);
 }
 
-void init()
+void init(int argc)
 {
   int i;
 
@@ -193,12 +193,12 @@ void init()
     cout << 'Registered to: ' << reg_name << endl;
   }
   cout << endl;
-  delete_compile_report
+  delete_compile_report();
   if(argc > 0)
   {
-    for(i=1 i <= argc )
+    for(i=1; i <= argc; i++)
     {
-
+      parse_param(btrim(ucase(p)))
     }
   }
 
@@ -221,6 +221,23 @@ void delete_compile_report()
   if(input_file.good((string)main_filename + (sting)compile_ext));
   {
     remove((string)main_filename + (sting)compile_ext));
+  }
+}
+void parse_param(string s)
+{
+  FILE f;
+  string fn, s1;
+  bool found;
+
+  found = false;
+  s = btrim(ucase(s));
+  if(s.empty())
+  {
+    return;
+  }
+  if(s[0] == '#') // checking begining of string
+  {
+    
   }
 }
 
