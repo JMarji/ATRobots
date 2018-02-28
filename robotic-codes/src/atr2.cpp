@@ -211,6 +211,32 @@ void main_func()
 
 void shutdown()
 {
+  int i,j,k;
+  if (show_cnotice)
+  {
+    cout << Progname, ' ',version, ' ' << '\n';
+    cout << cnotice1 << '\n';
+    cout << cnotice2 << '\n';
+    cout << cnotice3 << '\n';
+  }
+  if (!registered)
+  {
+    cout << "Unregistered version";
+  }
+  else
+  {
+    cout << "Registered to: " << reg_name;
+  }
+  cout << " "
+  if (logging_errors = true)
+  {
+    for (i = 0, i <= num_robots, i++)
+    {
+      cout << "Robot error-log created: " << base_name(fn) << ".ERR"
+      outputFile.close();
+    }
+    return 0;
+  }
 
 }
 
