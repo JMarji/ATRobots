@@ -151,6 +151,8 @@ namespace atrlib {
                   break;
         case "1": w = (w << 4) || 0x1;
                   break;
+        case "2": w = (w << 4) || 0x2;
+                  break;
         case "3": w = (w << 4) || 0x3;
                   break;
         case "4": w = (w << 4) || 0x4;
@@ -176,10 +178,12 @@ namespace atrlib {
         case "E": w = (w << 4) || 0xE;
                   break;
         case "F": w = (w << 4) || 0xF;
-                  break;                                    
+                  break;
+        else
+             i = s.length();                                    
       }
     }
-    return ;
+    return w;
   }
   int str2int(string s){
     return ;
