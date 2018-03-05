@@ -6,7 +6,8 @@
 #include "errorloging.hpp"
 #include <iostream>
 
-#define byte uint8_t;
+#define byte uint8_t
+#define word uint16_t
 #define progname "Robotic-Codes"
 #define version "2.10"
 #define cnotice1 "Copyright 2018 - SUNY Polytechnic Institute"
@@ -263,7 +264,7 @@ void parse_param(string s)
   }
   if(s[0] == '#') // checking begining of string
   {
-    
+
   }
 }
 
