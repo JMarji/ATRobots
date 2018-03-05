@@ -8,7 +8,8 @@
 #include "atrlib.hpp"
 
 #define _USE_MATH_DEFINES
-#define byte uint8_t;
+#define byte uint8_t
+#define word uint16_t
 using namespace std;
 
 namespace atrlib {
@@ -16,7 +17,7 @@ namespace atrlib {
   long int delay_per_sec;
   bool registered, graphix, sound_on;
   string reg_name;
-  byte reg_num;
+  word reg_num;
 
 
   string atrlib::lstr(string s1, int l){
@@ -41,13 +42,13 @@ namespace atrlib {
   {
     return ltrim(rtrim(s1));
   }
-  char hexnum(unsigned char num){
+  char hexnum(byte num){
     return ;
   }
-  string hexb(unsigned char num){
+  string hexb(byte num){
     return ;
   }
-  string hex(uint num){
+  string hex(word num){
     return ;
   }
   float valuer(string i){
@@ -136,7 +137,48 @@ namespace atrlib {
   int robot_color(int n){
     return ;
   }
-  int hex2int(string s){
+  int hex2int(string s)
+  {
+    word w;
+    int i, j;
+    i = 0;
+    w = 0;
+    while (i < s.length())
+    {
+      switch (s[i])
+      {
+        case "0": w = (w << 4) || 0x0;
+                  break;
+        case "1": w = (w << 4) || 0x1;
+                  break;
+        case "3": w = (w << 4) || 0x3;
+                  break;
+        case "4": w = (w << 4) || 0x4;
+                  break;
+        case "5": w = (w << 4) || 0x5;
+                  break;
+        case "6": w = (w << 4) || 0x6;
+                  break;
+        case "7": w = (w << 4) || 0x7;
+                  break;
+        case "8": w = (w << 4) || 0x8;
+                  break;
+        case "9": w = (w << 4) || 0x9;
+                  break;
+        case "A": w = (w << 4) || 0xA;
+                  break;
+        case "B": w = (w << 4) || 0xB;
+                  break;
+        case "C": w = (w << 4) || 0xC;
+                  break;
+        case "D": w = (w << 4) || 0xD;
+                  break;
+        case "E": w = (w << 4) || 0xE;
+                  break;
+        case "F": w = (w << 4) || 0xF;
+                  break;                                    
+      }
+    }
     return ;
   }
   int str2int(string s){
@@ -160,7 +202,7 @@ namespace atrlib {
   void textxy(int x, int y, string s){
     // draw text on top of a graphical box
   }
-  void coltextxy(int x, int y, string s, unsigned char c){
+  void coltextxy(int x, int y, string s, byte c){
 
   }
   void flushkey()
