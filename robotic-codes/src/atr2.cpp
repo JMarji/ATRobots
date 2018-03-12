@@ -202,6 +202,13 @@ void init(int argc)
       parse_param(btrim(ucase(p)))
     }
   }
+  else
+  {
+    prog_error(5, "");
+  }
+  temp_mode = step_mode;
+
+
 
 }
 
@@ -215,10 +222,10 @@ void shutdown()
   int i,j,k;
   if (show_cnotice)
   {
-    cout << Progname, ' ',version, ' ' << '\n';
-    cout << cnotice1 << '\n';
-    cout << cnotice2 << '\n';
-    cout << cnotice3 << '\n';
+    cout << Progname, ' ',version, ' ' << endl;
+    cout << cnotice1 << endl;
+    cout << cnotice2 << endl;
+    cout << cnotice3 << endl;
   }
   if (!registered)
   {
