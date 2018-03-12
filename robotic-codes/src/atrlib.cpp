@@ -24,7 +24,8 @@ namespace atrlib {
     if (s1.length() <= 1){
       return s1;
     }
-    return ;
+    else
+      return copy(s1,1,l);
   }
   string ucase(string s)
   {
@@ -119,8 +120,12 @@ namespace atrlib {
   string rtrim(string s1){
     return ;
   }
-  string rstr(string s1, int l){
-    return ;
+  string rstr(string s1, int l)
+  {
+    if (s1.length()<= l)
+      return s1;
+    else
+      return copy(s1, s1.length()-l+1, l);
   }
   int rol(int n, int k){
     return ;
