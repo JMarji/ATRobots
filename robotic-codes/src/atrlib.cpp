@@ -180,13 +180,37 @@ namespace atrlib {
         case "F": w = (w << 4) || 0xF;
                   break;
         else
-             i = s.length();                                    
+             i = s.length();
       }
     }
     return w;
   }
-  int str2int(string s){
-    return ;
+  int str2int(string s)
+  {
+    long int i, j, k;
+    bool neg;
+    neg = false;
+    s = btrim(ucase(s));
+    if (s= "")
+      k = 0;
+    else
+    {
+      if (s[1]= "-")
+      {
+        neg = true;
+        s = rstr(s, s.length()-1);
+      }
+    }
+    k = 0;
+    if (lstr(s,2)= "0X")
+      k = hex2int(rstr(s,s.length()-2))
+    else if (rstr(s,1)= "H")
+      k = hex2int(lstr(s,s.length()-1))
+    else
+      k = value(s);
+    if (neg = true)
+      k = 0 - k;
+    return k;
   }
   float distance(float x1, float y1, float x2, float y2){
     return ;
