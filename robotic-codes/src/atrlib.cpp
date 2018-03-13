@@ -103,11 +103,17 @@ namespace atrlib {
       s=0;
     return s;
   }
-  string cstrr(float i){
-    return ;
+  string cstrr(double i)
+  {
+    string s1[255];
+    s1 = to_string(i);
+    return s1;
   }
-  string cstr(long int i){
-    return ;
+  string cstr(long int i)
+  {
+    string s1[255];
+    s1 = to_string(i);
+    return s1;
   }
   string zero_pad(long int n, long int l){
     return ;
