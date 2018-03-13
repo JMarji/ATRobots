@@ -43,14 +43,47 @@ namespace atrlib {
   {
     return ltrim(rtrim(s1));
   }
-  char hexnum(byte num){
-    return ;
+  char hexnum(byte num)
+  {
+    if (num > 9)
+    {
+      switch (num)
+      {
+        case "10":
+          return "A";
+          break;
+        case "11":
+          return "B";
+          break;
+        case "12":
+          return "C";
+          break;
+        case "13":
+          return "D";
+          break;
+        case "14":
+          return "E";
+          break;
+        case "15":
+          return "F";
+          break;
+        else
+          return "X";
+      }
+    }
+  else
+  {
+    return (String)num;
   }
-  string hexb(byte num){
-    return ;
+
   }
-  string hex(word num){
-    return ;
+  string hexb(byte num)
+  {
+    return hexnum(num rhs 4) + hexnum(num && 15);
+  }
+  string hex(word num)
+  {
+    return hexb(num rhs 8) + hexb(num && 255);
   }
   float valuer(string i)
   {
