@@ -115,17 +115,41 @@ namespace atrlib {
     s1 = to_string(i);
     return s1;
   }
-  string zero_pad(long int n, long int l){
-    return ;
+  string zero_pad(long int n, long int l)
+  {
+    string s;
+    s = cstr(n);
+    while (s.length() < l)
+    {
+      s = "0" + s;
+    }
+    return s;
   }
-  string zero_pads(string s, long int l){
-    return ;
+  string zero_pads(string s, long int l)
+  {
+    string s1;
+    s1 = s;
+    while (s1.length() < l)
+    {
+      s1 = "0" + s1;
+    }
+    return s1;
   }
-  string addfront(string b, int l){
-    return ;
+  string addfront(string b, int l)
+  {
+    while (b.length() < l)
+    {
+      b = " "+b;
+    }
+    return b;
   }
-  string addrear(string b, int l){
-    return ;
+  string addrear(string b, int l)
+  {
+    while (b.length() < l)
+    {
+      b = b+" ";
+    }
+    return b;
   }
   string lcase(string s)
   {
