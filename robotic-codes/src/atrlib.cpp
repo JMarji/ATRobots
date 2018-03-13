@@ -114,11 +114,23 @@ namespace atrlib {
     }
     return s;
   }
-  string ltrim(string s1){
-    return ;
+  string ltrim(string s1)
+  {
+    int i;
+    while ((s1.length()>0)&&(copy(s1,1,1)=" ")||(copy(s1,1,1)=#8)||(copy(s1,1,1)=#9))
+    {
+      s1 = copy(s1,2,s1.length()-1)
+    }
+    return s1;
   }
-  string rtrim(string s1){
-    return ;
+  string rtrim(string s1)
+  {
+    int i;
+    while ((s1.length()>0) && (copy(s1,s1.length(),1)=' ') || (copy(s1,s1.length(),1)=#8)||(copy(s1,s1.length(),1)=#9))
+    {
+      s1 = copy(s1,1,s1.length()-1);
+    }
+    return s1;
   }
   string rstr(string s1, int l)
   {
