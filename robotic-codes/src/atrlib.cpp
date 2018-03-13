@@ -25,7 +25,7 @@ namespace atrlib {
       return s1;
     }
     else
-      return copy(s1,1,l);
+      return s1.substr(1,l);
   }
   string ucase(string s)
   {
@@ -162,18 +162,18 @@ namespace atrlib {
   string ltrim(string s1)
   {
     int i;
-    while ((s1.length()>0)&&(copy(s1,1,1)=" ")||(copy(s1,1,1)=#8)||(copy(s1,1,1)=#9))
+    while ((s1.length()>0)&&(s1.substr(0,1)=" ")||(s1.substr(0,1)=#8)||(s1.substr(0,1)=#9))
     {
-      s1 = copy(s1,2,s1.length()-1)
+      s1 = s1.substr(2,s1.length()-1)
     }
     return s1;
   }
   string rtrim(string s1)
   {
     int i;
-    while ((s1.length()>0) && (copy(s1,s1.length(),1)=' ') || (copy(s1,s1.length(),1)=#8)||(copy(s1,s1.length(),1)=#9))
+    while ((s1.length()>0) && (s1.substr(s1.length(),1)=' ') || (s1.substr(s1.length(),1)=#8)||(s1.substr(s1.length(),1)=#9))
     {
-      s1 = copy(s1,1,s1.length()-1);
+      s1 = s1.substr(1,s1.length()-1);
     }
     return s1;
   }
@@ -182,7 +182,7 @@ namespace atrlib {
     if (s1.length()<= l)
       return s1;
     else
-      return copy(s1, s1.length()-l+1, l);
+      return s1.substr(s1.length()-l+1, l);
   }
   int rol(int n, int k){
     return ;
