@@ -52,11 +52,23 @@ namespace atrlib {
   string hex(word num){
     return ;
   }
-  float valuer(string i){
-    return ;
+  float valuer(string i)
+  {
+    float s;
+    int n;
+    val(i,s,n);
+    if (n>0)
+      s=0;
+    return s;
   }
-  long int value(string i){
-    return ;
+  long int value(string i)
+  {
+    long int s;
+    int n;
+    val(i,s,n);
+    if (n>0)
+      s=0;
+    return s;
   }
   string cstrr(float i){
     return ;
