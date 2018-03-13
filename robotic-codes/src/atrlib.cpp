@@ -79,11 +79,11 @@ namespace atrlib {
   }
   string hexb(byte num)
   {
-    return hexnum(num rhs 4) + hexnum(num && 15);
+    return hexnum(num >> 4) + hexnum(num && 15);
   }
   string hex(word num)
   {
-    return hexb(num rhs 8) + hexb(num && 255);
+    return hexb(num >> 8) + hexb(num && 255);
   }
   float valuer(string i)
   {
