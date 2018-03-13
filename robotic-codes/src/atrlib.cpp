@@ -25,7 +25,7 @@ namespace atrlib {
       return s1;
     }
     else
-      return copy(s1,1,l);
+      return s1.substr(1,l);
   }
   string ucase(string s)
   {
@@ -103,23 +103,53 @@ namespace atrlib {
       s=0;
     return s;
   }
-  string cstrr(float i){
-    return ;
+  string cstrr(double i)
+  {
+    string s1[255];
+    s1 = to_string(i);
+    return s1;
   }
-  string cstr(long int i){
-    return ;
+  string cstr(long int i)
+  {
+    string s1[255];
+    s1 = to_string(i);
+    return s1;
   }
-  string zero_pad(long int n, long int l){
-    return ;
+  string zero_pad(long int n, long int l)
+  {
+    string s;
+    s = cstr(n);
+    while (s.length() < l)
+    {
+      s = "0" + s;
+    }
+    return s;
   }
-  string zero_pads(string s, long int l){
-    return ;
+  string zero_pads(string s, long int l)
+  {
+    string s1;
+    s1 = s;
+    while (s1.length() < l)
+    {
+      s1 = "0" + s1;
+    }
+    return s1;
   }
-  string addfront(string b, int l){
-    return ;
+  string addfront(string b, int l)
+  {
+    while (b.length() < l)
+    {
+      b = " "+b;
+    }
+    return b;
   }
-  string addrear(string b, int l){
-    return ;
+  string addrear(string b, int l)
+  {
+    while (b.length() < l)
+    {
+      b = b+" ";
+    }
+    return b;
   }
   string lcase(string s)
   {
@@ -162,18 +192,18 @@ namespace atrlib {
   string ltrim(string s1)
   {
     int i;
-    while ((s1.length()>0)&&(copy(s1,1,1)=" ")||(copy(s1,1,1)=#8)||(copy(s1,1,1)=#9))
+    while ((s1.length()>0)&&(s1.substr(0,1)=" ")||(s1.substr(0,1)=#8)||(s1.substr(0,1)=#9))
     {
-      s1 = copy(s1,2,s1.length()-1)
+      s1 = s1.substr(2,s1.length()-1)
     }
     return s1;
   }
   string rtrim(string s1)
   {
     int i;
-    while ((s1.length()>0) && (copy(s1,s1.length(),1)=' ') || (copy(s1,s1.length(),1)=#8)||(copy(s1,s1.length(),1)=#9))
+    while ((s1.length()>0) && (s1.substr(s1.length(),1)=' ') || (s1.substr(s1.length(),1)=#8)||(s1.substr(s1.length(),1)=#9))
     {
-      s1 = copy(s1,1,s1.length()-1);
+      s1 = s1.substr(1,s1.length()-1);
     }
     return s1;
   }
@@ -182,7 +212,7 @@ namespace atrlib {
     if (s1.length()<= l)
       return s1;
     else
-      return copy(s1, s1.length()-l+1, l);
+      return s1.substr(s1.length()-l+1, l);
   }
   int rol(int n, int k){
     return ;
