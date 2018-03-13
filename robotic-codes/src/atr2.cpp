@@ -71,7 +71,7 @@ using namespace std;
   typedef struct
   {
     string[max_var_len];
-  } stringz; // struct made in order to make array of array of strings varname
+  } varname; // struct made in order to make array of array of strings varname
   typedef struct
   {
     robot_rec *
@@ -207,8 +207,59 @@ void init(int argc)
     prog_error(5, "");
   }
   temp_mode = step_mode;
+  if (logging_errors)
+  {
+    //always false
+    int fake_var;
+  }
+  if (compile_only)
+  {
+    write_compile_report();
+  }
+  if (num_robots < 1)
+  {
+    prog_error(4, "");
+  }
+  if (!(no_gfx))
+  {
+    graph_mode(true);
+  }
+  if (matches > 100000)
+  {
+    matches = 100000;
+  }
+  if (matches < 1)
+  {
+    matches = 1;
+  }
+  if (game_delay > 1000)
+  {
+    game_delay = 1000;
+  }
+  if (time_slice > 100)
+  {
+    time_slice = 100;
+  }
+  if (time_slice < 1)
+  {
+    time_slice = 1;
+  }
+  if (game_limit > 100000)
+  {
+    game_limit = 100000;
+  }
+  if (maxcode < 1)
+  {
+    maxcode = 1;
+  }
+  if (maxcode > max_code)
+  {
+    maxcode = max_code;
+  }
+  for (i = num_robots + 3; i <= maxrobots + 4; i++)
+  {
 
-
+  }
 
 }
 
