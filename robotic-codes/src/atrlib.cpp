@@ -339,7 +339,7 @@ namespace atrlib {
     return k;
   }
   float distance(float x1, float y1, float x2, float y2){
-    return ;
+    return abs(sqrt(pow(y1-y2,2)+pow(x1-x2,2)));
   }
   float find_angle(float xx, float yy, float tx, float ty){
     return ;
@@ -366,14 +366,24 @@ namespace atrlib {
   }
   string decimal(int num, int length)
   {
-
-    return ;
+    string dec_string;
+    int i;
+    dec_string = "";
+    for (i = 1; i <= length; i++)
+    {
+      dec_string = (char)((num % 10)+48) + dec_string;
+      num = num/10;
+    }
+    return dec_string;
   }
-  void textxy(int x, int y, string s){
+  void textxy(int x, int y, string s)
+  {
     // draw text on top of a graphical box
-  }
-  void coltextxy(int x, int y, string s, byte c){
 
+  }
+  void coltextxy(int x, int y, string s, byte c)
+  {
+      textxy(x,y,s);
   }
   void flushkey()
   {
