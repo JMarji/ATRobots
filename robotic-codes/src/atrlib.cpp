@@ -27,6 +27,10 @@ namespace atrlib {
     else
       return s1.substr(1,l);
   }
+  int customArray (int higher, int lower)
+  {
+    return (higher - lower);
+  }
   string ucase(string s)
   {
     int i;
@@ -339,13 +343,54 @@ namespace atrlib {
     return k;
   }
   float distance(float x1, float y1, float x2, float y2){
-    return ;
+    return abs(sqrt(pow(y1-y2,2)+pow(x1-x2,2)));
   }
-  float find_angle(float xx, float yy, float tx, float ty){
-    return ;
+  float find_angle(float xx, float yy, float tx, float ty)
+  {
+    int i, j, k, v, z;
+    float q;
+    q = 0;
+    v = abs(round(tx-xx));
+    if (v = 0)
+    {
+      if ((tx=xx) && (ty > yy))
+        q = M_PI;
+      if ((tx=xx) && (ty < yy))
+        q = 0;
+    }
+    else
+    {
+      z = abs(round(ty-yy));
+      q = abs(arctan(z/v));
+      if ((tx > xx) && (ty > yy))
+        q = M_PI/2+q;
+      if ((tx > xx) && (ty < yy))
+        q = M_PI/2-q;
+      if ((tx < xx) && (ty < yy))
+        q = M_PI+M_PI/2+q;
+      if ((tx < xx) && (ty > yy))
+        q = M_PI+M_PI/2-q;
+      if ((tx = xx) && (ty > yy))
+        q = M_PI/2;
+      if ((tx = xx) && (ty < yy))
+        q = 0;
+      if ((tx < xx) && (ty = yy))
+        q = M_PI + M_PI / 2;
+      if ((tx > xx) && (ty = yy))
+        q = M_PI/2;
+    }
+    return q;
   }
-  int find_anglei(float xx, float yy, float tx, float ty){
-    return ;
+  int find_anglei(float xx, float yy, float tx, float ty)
+  {
+    int i;
+    i = round(find_angle(xx,yy,tx,ty)/M_PI*128+256);
+    while (i < 0)
+    {
+      i = i + 256;
+    }
+    i = i && 255;
+    return i;
   }
   string bin(int n)
   {
@@ -366,14 +411,24 @@ namespace atrlib {
   }
   string decimal(int num, int length)
   {
-
-    return ;
+    string dec_string;
+    int i;
+    dec_string = "";
+    for (i = 1; i <= length; i++)
+    {
+      dec_string = (char)((num % 10)+48) + dec_string;
+      num = num/10;
+    }
+    return dec_string;
   }
-  void textxy(int x, int y, string s){
+  void textxy(int x, int y, string s)
+  {
     // draw text on top of a graphical box
-  }
-  void coltextxy(int x, int y, string s, byte c){
 
+  }
+  void coltextxy(int x, int y, string s, byte c)
+  {
+      textxy(x,y,s);
   }
   void flushkey()
   {
