@@ -27,6 +27,10 @@ namespace atrlib {
     else
       return s1.substr(1,l);
   }
+  int customArray (int higher, int lower)
+  {
+    return (higher - lower);
+  }
   string ucase(string s)
   {
     int i;
