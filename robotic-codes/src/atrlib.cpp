@@ -377,8 +377,16 @@ namespace atrlib {
     }
     return q;
   }
-  int find_anglei(float xx, float yy, float tx, float ty){
-    return ;
+  int find_anglei(float xx, float yy, float tx, float ty)
+  {
+    int i;
+    i = round(find_angle(xx,yy,tx,ty)/M_PI*128+256);
+    while (i < 0)
+    {
+      i = i + 256;
+    }
+    i = i && 255;
+    return i;
   }
   string bin(int n)
   {
