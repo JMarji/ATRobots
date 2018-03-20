@@ -226,8 +226,42 @@ namespace atrlib {
   int sar(int n, int k){
     return ;
   }
-  int robot_color(int n){
-    return ;
+  int robot_color(int n)
+  {
+    int k;
+    k = 7;
+    switch (n % 14)
+    {
+      case "0": k = 10;
+        break;
+      case "1": k = 12;
+        break;
+      case "2": k = 9;
+        break;
+      case "3": k = 11;
+        break;
+      case "4": k = 13;
+        break;
+      case "5": k = 14;
+        break;
+      case "6": k = 7;
+        break;
+      case "7": k = 6;
+        break;
+      case "8": k = 2;
+        break;
+      case "9": k = 4;
+        break;
+      case "10": k = 1;
+        break;
+      case "11": k = 3;
+        break;
+      case "12": k = 5;
+        break;
+      else
+        k = 15;
+    }
+    return k;
   }
   int hex2int(string s)
   {
@@ -313,10 +347,26 @@ namespace atrlib {
   int find_anglei(float xx, float yy, float tx, float ty){
     return ;
   }
-  string bin(int n){
-    return ;
+  string bin(int n)
+  {
+    int i;
+    string bin_string;
+    bin_string = "";
+    for (i = 0; i <= 15; i++)
+    {
+      if ((n % 2) = 0)
+      {
+        bin_string = "0" + bin_string;
+      }
+      else
+        bin_string = "1" + bin_string;
+      n = n/2;
+    }
+    return bin_string;
   }
-  string decimal(int num, int length){
+  string decimal(int num, int length)
+  {
+
     return ;
   }
   void textxy(int x, int y, string s){
