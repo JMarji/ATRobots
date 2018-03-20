@@ -341,8 +341,41 @@ namespace atrlib {
   float distance(float x1, float y1, float x2, float y2){
     return abs(sqrt(pow(y1-y2,2)+pow(x1-x2,2)));
   }
-  float find_angle(float xx, float yy, float tx, float ty){
-    return ;
+  float find_angle(float xx, float yy, float tx, float ty)
+  {
+    int i, j, k, v, z;
+    float q;
+    q = 0;
+    v = abs(round(tx-xx));
+    if (v = 0)
+    {
+      if ((tx=xx) && (ty > yy))
+        q = M_PI;
+      if ((tx=xx) && (ty < yy))
+        q = 0;
+    }
+    else
+    {
+      z = abs(round(ty-yy));
+      q = abs(arctan(z/v));
+      if ((tx > xx) && (ty > yy))
+        q = M_PI/2+q;
+      if ((tx > xx) && (ty < yy))
+        q = M_PI/2-q;
+      if ((tx < xx) && (ty < yy))
+        q = M_PI+M_PI/2+q;
+      if ((tx < xx) && (ty > yy))
+        q = M_PI+M_PI/2-q;
+      if ((tx = xx) && (ty > yy))
+        q = M_PI/2;
+      if ((tx = xx) && (ty < yy))
+        q = 0;
+      if ((tx < xx) && (ty = yy))
+        q = M_PI + M_PI / 2;
+      if ((tx > xx) && (ty = yy))
+        q = M_PI/2;
+    }
+    return q;
   }
   int find_anglei(float xx, float yy, float tx, float ty){
     return ;
