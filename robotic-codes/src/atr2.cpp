@@ -256,11 +256,10 @@ void init(int argc)
   {
     maxcode = max_code;
   }
-  for (i = num_robots + 3; i <= maxrobots + 4; i++)
+  for (i = num_robots + 1; i <= maxrobots + 2; i++)
   {
-
+    robot[i] = robot[0];
   }
-
 }
 
 void main_func()
