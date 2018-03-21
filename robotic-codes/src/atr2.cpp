@@ -115,6 +115,9 @@ void init(int argc);
 void main_func();
 void shutdown();
 void delete_compile_report();
+void parse_param(string s);
+void bout();
+void init_bout();
 
 int main(int argc, char *argv[])
 {
@@ -165,18 +168,18 @@ void init(int argc)
   game_delay = default_delay;
   time_slice = default_slice;
   // below lies an object of class missile_rec
-  missile_rec missile_object
+
 
   for (i = 0; i <= max_missiles; i++)
   {
     //class missle_rec in robclass.cpp
-    missile_object.set_a(0);
-    missile_object.set_source(-1);
-    missile_object.set_x(0);
-    missile_object.set_y(0);
-    missile_object.set_lx(0);
-    missile_object.set_ly(0);
-    missile_object.set_mult(1);
+    missile[i].set_a(0);
+    missile[i].set_source(-1);
+    missile[i].set_x(0);
+    missile[i].set_y(0);
+    missile[i].set_lx(0);
+    missile[i].set_ly(0);
+    missile[i].set_mult(1);
   }
   registered = false;
   reg_name = 'Unregistered';    // all these vars are declared in atrlib.cpp
@@ -264,7 +267,14 @@ void init(int argc)
 
 void main_func()
 {
-
+  int i,j,k,l,n,w;
+  if ( matches > 0)
+  {
+    for(i=0; i<= matches; i++)
+    {
+      bout();
+    }
+  }
 }
 
 void shutdown()
@@ -325,4 +335,34 @@ void parse_param(string s)
   }
 }
 
-void
+void bout()
+{
+  int i,j,k;
+  char c;
+  long timer;
+  int n; //loop count for mem_watch
+
+  if(quit)
+    return;
+
+  played++; //inc is a function that does incremntation
+  init_bout();
+}
+
+void init_bout();
+{
+  int i,j,k;
+
+  game_cycle = 0;
+  for(i=0; i <= max_missiles; i++)
+  {
+    //class missle_rec in robclass.cpp
+    missile[i].set_a(0);
+    missile[i].set_source(-1);
+    missile[i].set_x(0);
+    missile[i].set_y(0);
+    missile[i].set_lx(0);
+    missile[i].set_ly(0);
+    missile[i].set_mult(1);
+  }
+}

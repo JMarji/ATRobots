@@ -409,6 +409,7 @@ namespace atrlib {
     }
     return bin_string;
   }
+  
   string decimal(int num, int length)
   {
     string dec_string;

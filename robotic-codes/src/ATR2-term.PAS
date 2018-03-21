@@ -1421,7 +1421,7 @@ begin
    if (j and 7)=1 then
     begin
      k:=get_from_ram(n,i,j);
-    end else k:=i;
+    end else k:=i;https://stackoverflow.com/questions/8182972/argument-checking
    if (j and 8)>0 then
     k:=get_from_ram(n,k,j);
   end;

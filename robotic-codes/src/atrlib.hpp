@@ -38,8 +38,7 @@ namespace atrlib {
     float find_angle(float xx, float yy, float tx, float ty);
     int find_anglei(float xx, float yy, float tx, float ty);
     string bin(int n);
-    string decimal(int num, int length);
-    void textxy(int x, int y, string s);
+    string decimal(int num, int length);    
     void coltextxy(int x, int y, string s, unsigned char c);
     void flushkey();
     void calibrate_timing();
