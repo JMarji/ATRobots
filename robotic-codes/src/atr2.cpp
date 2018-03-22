@@ -365,4 +365,65 @@ void init_bout();
     missile[i].set_ly(0);
     missile[i].set_mult(1);
   }
-}
+ }
+ string operand(int n, int m)
+ {
+   string s;
+   s = cstr(n);
+   switch (m & 7)
+   {
+     case 1:
+       s = "@" + s;
+       break;
+     case 2:
+       s = ":" + s;
+       break;
+     case 3:
+       s = "$" + s;
+       break;
+     case 4:
+       s = "!" + s;
+       break;
+     else
+       s = cstr(n);
+   }
+   if (m & 8>0)
+      s = "[" + s + "]";
+ }
+ string mnemonic(int n, int m)
+ {
+   string s;
+   if (m == 0)
+   {
+     switch (n)
+     {
+       case 00:
+         s = "NOP";
+         break;
+       case 01:
+         s = "ADD";
+         break;
+       case 02:
+         s = "SUB";
+         break;
+       case 03:
+         s = "OR";
+         break;
+       case 04:
+         s = "AND";
+         break;
+       case 05:
+         s = "XOR";
+         break;
+       case 06:
+         s = "NOT";
+         break;
+       case 07:
+         s = "MPY";
+         break;
+       case 08;
+         s = "DIV";
+         break;               
+     }
+   }
+ }
