@@ -21,5 +21,16 @@ namespace guilib
   {
 
   }
+  void textxy(int x, int y, string s)
+  {
+    // draw text on top of a graphical box
+    setfillstyle(1,0);
+    bar(x,y,x+s.length()*8, y+7);
+    outtextxy(x,y,s);
+  }
+  void coltextxy(int x, int y, string s, byte c)
+  {
+      textxy(x,y,s);
+  }
 
 }

@@ -422,17 +422,7 @@ namespace atrlib {
     }
     return dec_string;
   }
-  void textxy(int x, int y, string s)
-  {
-    // draw text on top of a graphical box
-    setfillstyle(1,0);
-    bar(x,y,x+s.length()*8, y+7);
-    outtextxy(x,y,s);
-  }
-  void coltextxy(int x, int y, string s, byte c)
-  {
-      textxy(x,y,s);
-  }
+  
   void flushkey()
   {
     fflush(stdin); //this might affect portabliltiy
@@ -471,7 +461,7 @@ namespace atrlib {
          registered = true;
     }
   }
-  
+
   void make_tables()
   {
     int i, j, k;
