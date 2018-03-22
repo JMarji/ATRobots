@@ -480,11 +480,5 @@ namespace atrlib {
     double degrees = radian * (180.0/M_PI);
     return degrees;
   }
-  
-  void chirp(){
 
-  }
-  void click(){
-
-  }
 }
