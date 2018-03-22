@@ -365,65 +365,195 @@ void init_bout();
     missile[i].set_ly(0);
     missile[i].set_mult(1);
   }
+}
+string operand(int n, int m)
+{
+  string s;
+  s = cstr(n);
+  switch (m & 7)
+  {
+   case 1:
+     s = "@" + s;
+     break;
+   case 2:
+     s = ":" + s;
+     break;
+    case 3:
+     s = "$" + s;
+     break;
+   case 4:
+     s = "!" + s;
+     break;
+   else
+     s = cstr(n);
  }
- string operand(int n, int m)
- {
-   string s;
-   s = cstr(n);
-   switch (m & 7)
-   {
-     case 1:
-       s = "@" + s;
-       break;
-     case 2:
-       s = ":" + s;
-       break;
-     case 3:
-       s = "$" + s;
-       break;
-     case 4:
-       s = "!" + s;
-       break;
-     else
-       s = cstr(n);
-   }
-   if (m & 8>0)
-      s = "[" + s + "]";
- }
- string mnemonic(int n, int m)
- {
-   string s;
-   if (m == 0)
-   {
-     switch (n)
-     {
-       case 00:
-         s = "NOP";
-         break;
-       case 01:
-         s = "ADD";
-         break;
-       case 02:
-         s = "SUB";
-         break;
-       case 03:
-         s = "OR";
-         break;
-       case 04:
-         s = "AND";
-         break;
-       case 05:
-         s = "XOR";
-         break;
-       case 06:
-         s = "NOT";
-         break;
-       case 07:
-         s = "MPY";
-         break;
-       case 08;
-         s = "DIV";
-         break;               
-     }
-   }
- }
+ if (m & 8>0)
+    s = "[" + s + "]";
+}
+string mnemonic(int n, int m)
+{
+  string s;
+  if (m == 0)
+  {
+    switch (n)
+    {
+      case 00:
+        s = "NOP";
+        break;
+      case 01:
+        s = "ADD";
+        break;
+      case 02:
+        s = "SUB";
+        break;
+      case 03:
+        s = "OR";
+        break;
+      case 04:
+        s = "AND";
+        break;
+      case 05:
+        s = "XOR";
+        break;
+      case 06:
+        s = "NOT";
+        break;
+      case 07:
+        s = "MPY";
+        break;
+      case 08:
+        s = "DIV";
+        break;
+      case 09:
+        s = "MOD";
+        break;
+      case 10:
+        s = "RET";
+        break;
+      case 11:
+        s = "CALL";
+        break;
+      case 12:
+        s = "JMP";
+        break;
+      case 13:
+        s = "JLS";
+        break;
+      case 14:
+        s = "JGR";
+        break;
+      case 15:
+        s = "JNE";
+        break;
+      case 16:
+        s = "JE";
+        break;
+      case 17:
+        s = "SWAP";
+        break;
+      case 18:
+        s = "DO";
+        break;
+      case 19:
+        s = "LOOP";
+        break;
+      case 20:
+        s = "CMP";
+        break;
+      case 21:
+        s = "TEST";
+        break;
+      case 22:
+        s = "MOV";
+        break;
+      case 23:
+        s = "LOC";
+        break;
+      case 24:
+        s = "GET";
+        break;
+      case 25:
+        s = "PUT";
+        break;
+      case 26:
+        s = "INT";
+        break;
+      case 27:
+        s = "IPO";
+        break;
+      case 28:
+        s = "OPO";
+        break;
+      case 29:
+        s = "DELAY";
+        break;
+      case 30:
+        s = "PUSH";
+        break;
+      case 31:
+        s = "POP";
+        break;
+      case 32:
+        s = "ERR";
+        break;
+      case 33:
+        s = "INC";
+        break;
+      case 34:
+        s = "DEC";
+        break;
+      case 35:
+        s = "SHL";
+        break;
+      case 36:
+        s = "SHR";
+        break;
+      case 37:
+        s = "ROL";
+        break;
+      case 38:
+        s = "ROR";
+        break;
+      case 39:
+        s = "JZ";
+        break;
+      case 40:
+        s = "JNZ";
+        break;
+      case 41:
+        s = "JGE";
+        break;
+      case 42:
+        s = "JLE";
+        break;
+      case 43:
+        s = "SAL";
+        break;
+      case 44:
+        s = "SAR";
+        break;
+      case 45:
+        s = "NEG";
+        break;
+      case 46:
+        s = "JTL";
+        break;
+      else
+        s = "XXX";
+    }
+  }
+  s = operand(n,m);
+  return s;
+}
+int max_shown()
+{
+  switch (stats_mode)
+  {
+    case 1:
+      max_shown = 12;
+    case 2:
+      max_shown = 32;
+    else
+      max_shown = 6;
+  }
+}
