@@ -422,7 +422,7 @@ namespace atrlib {
     }
     return dec_string;
   }
-  
+
   void flushkey()
   {
     fflush(stdin); //this might affect portabliltiy
@@ -432,10 +432,12 @@ namespace atrlib {
     int c;
     c = getchar();
   }
-  void calibrate_timing(){
+  void calibrate_timing()
+  {
 
   }
-  void time_delay(int n){
+  void time_delay(int n)
+  {
 
   } //n=milliseconds
   void check_registration()
@@ -478,12 +480,7 @@ namespace atrlib {
     double degrees = radian * (180.0/M_PI);
     return degrees;
   }
-  void box(int x1, int y1, int x2, int y2){
-
-  }
-  void hole(int x1, int y1, int x2, int y2){
-
-  }
+  
   void chirp(){
 
   }

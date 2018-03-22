@@ -32,5 +32,11 @@ namespace guilib
   {
       textxy(x,y,s);
   }
+  void box(int x1, int y1, int x2, int y2){
+
+  }
+  void hole(int x1, int y1, int x2, int y2){
+
+  }
 
 }
