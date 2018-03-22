@@ -218,18 +218,7 @@ namespace atrlib {
     else
       return s1.substr(s1.length()-l+1, l);
   }
-  int rol(int n, int k){
-    return ;
-  }
-  int ror(int n, int k){
-    return ;
-  }
-  int sal(int n, int k){
-    return ;
-  }
-  int sar(int n, int k){
-    return ;
-  }
+
   int robot_color(int n)
   {
     int k;
@@ -422,17 +411,7 @@ namespace atrlib {
     }
     return dec_string;
   }
-  void textxy(int x, int y, string s)
-  {
-    // draw text on top of a graphical box
-    setfillstyle(1,0);
-    bar(x,y,x+s.length()*8, y+7);
-    outtextxy(x,y,s);
-  }
-  void coltextxy(int x, int y, string s, byte c)
-  {
-      textxy(x,y,s);
-  }
+
   void flushkey()
   {
     fflush(stdin); //this might affect portabliltiy
@@ -442,10 +421,12 @@ namespace atrlib {
     int c;
     c = getchar();
   }
-  void calibrate_timing(){
+  void calibrate_timing()
+  {
 
   }
-  void time_delay(int n){
+  void time_delay(int n)
+  {
 
   } //n=milliseconds
   void check_registration()
@@ -471,7 +452,7 @@ namespace atrlib {
          registered = true;
     }
   }
-  
+
   void make_tables()
   {
     int i, j, k;
@@ -488,16 +469,5 @@ namespace atrlib {
     double degrees = radian * (180.0/M_PI);
     return degrees;
   }
-  void box(int x1, int y1, int x2, int y2){
 
-  }
-  void hole(int x1, int y1, int x2, int y2){
-
-  }
-  void chirp(){
-
-  }
-  void click(){
-
-  }
 }
