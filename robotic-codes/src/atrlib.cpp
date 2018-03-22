@@ -218,18 +218,7 @@ namespace atrlib {
     else
       return s1.substr(s1.length()-l+1, l);
   }
-  int rol(int n, int k){
-    return ;
-  }
-  int ror(int n, int k){
-    return ;
-  }
-  int sal(int n, int k){
-    return ;
-  }
-  int sar(int n, int k){
-    return ;
-  }
+
   int robot_color(int n)
   {
     int k;
