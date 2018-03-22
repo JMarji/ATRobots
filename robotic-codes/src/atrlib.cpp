@@ -409,7 +409,7 @@ namespace atrlib {
     }
     return bin_string;
   }
-  
+
   string decimal(int num, int length)
   {
     string dec_string;
@@ -425,7 +425,9 @@ namespace atrlib {
   void textxy(int x, int y, string s)
   {
     // draw text on top of a graphical box
-
+    setfillstyle(1,0);
+    bar(x,y,x+s.length()*8, y+7);
+    outtextxy(x,y,s);
   }
   void coltextxy(int x, int y, string s, byte c)
   {
@@ -469,12 +471,7 @@ namespace atrlib {
          registered = true;
     }
   }
-  void viewport(int x1, int y1, int x2, int y2){
-
-  }
-  void main_viewport(){
-
-  }
+  
   void make_tables()
   {
     int i, j, k;

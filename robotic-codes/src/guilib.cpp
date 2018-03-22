@@ -10,6 +10,16 @@
 using namespace glm;
 using namespace std;
 
-namespace guilib {
+namespace guilib
+{
+  void viewport(int x1, int y1, int x2, int y2)
+  {
+    if (!graphix)
+      exit;
+  }
+  void main_viewport()
+  {
+
+  }
 
 }
