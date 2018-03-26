@@ -550,10 +550,10 @@ int max_shown()
   switch (stats_mode)
   {
     case 1:
-      max_shown = 12;
+      return 12;
     case 2:
-      max_shown = 32;
+      return 32;
     else
-      max_shown = 6;
+      return 6;
   }
 }
