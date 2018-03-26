@@ -71,7 +71,7 @@ using namespace std;
   typedef struct
   {
     string[max_var_len];
-  } varname; // struct made in order to make array of array of strings varname
+  } stringz; // struct made in order to make array of array of strings varname
   typedef struct
   {
     robot_rec *
