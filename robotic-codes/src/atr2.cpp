@@ -77,6 +77,11 @@ using namespace std;
     robot_rec *
   }robot_ptr; // this might work for robot pointer im not sure tho
 
+  typedef struct
+  {
+    char[max_op][16];
+  }parsetype;
+
 int num_robots, numvars, numlabels, maxcode, lock_pos, lock_dat, game_delay,
 time_slice, insanity, update_timer, max_gx, max_gy, stats_mode, kill_count,
 report_type;
