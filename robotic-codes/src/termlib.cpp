@@ -2,8 +2,7 @@
 #include <cstdlib>
 #include "termlib.hpp"
 
-using namespace std;
+#define max_op 3
+#define max_code 1023
 
-namespace termlib{
-  
-}
+using namespace std;
