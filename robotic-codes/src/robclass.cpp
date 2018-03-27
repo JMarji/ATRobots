@@ -8,16 +8,18 @@
 #include "termlib.hpp"
 using namespace std;
 
-class mine_rec
+typedef struct
 {
-  private:
-    double x, y;
-    int detect, yield;
-    bool detonate;
+  double x, y;
+  int detect, yield;
+  bool detonate;
+}mine_rec;
 
-  public:
-
-};
+typedef struct
+{
+  double x, y, lx, ly, mult, mspd;
+  int source, a, hd, rad, lrad, max_rad;
+}missle_rec;
 
 class robot_rec
 {
@@ -41,70 +43,7 @@ class robot_rec
     //good question to ask Dr.Confer
     struct prog_type code; // code = new prog_type;
     //line 159 in ATR2.PAS should we make a char array or a string type?
-   string name, fn;
-   mine_rec mine[max_mines];
+    string name, fn;
+    mine_rec mine[max_mines];
    //errorlog how should we implemnt the text data type
-
-};
-
-class missile_rec
-{
-  private:
-    double x,y,lx,ly,mult,mspd;
-    int source,a,hd,rad,lrad,max_rad;
-
-  public:
-    void set_source(int x)
-    {
-      source = x;
-    }
-    void set_a(int x)
-    {
-      a = x;
-    }
-    void set_hd(int x)
-    {
-      hd = x;
-    }
-    void set_rad(int x)
-    {
-      rad = x;
-    }
-    void set_lrad(int x)
-    {
-      lrad = x;
-    }
-    void set_max_rad(int x)
-    {
-      max_rad = x;
-    }
-    void set_x(double num)
-    {
-      x = num;
-    }
-    void set_y(double x)
-    {
-      y = x;
-    }
-    void set_lx(double x)
-    {
-      lx = x;
-    }
-    void set_ly(double x)
-    {
-      ly = x;
-    }
-    void set_mult(double x)
-    {
-      mult = x;
-    }
-    void set_mspd(double x)
-    {
-      mspd = x;
-    }
-
-    void set_detonate(bool x)
-    {
-      detonate = x;
-    }
 };
