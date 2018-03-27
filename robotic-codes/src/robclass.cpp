@@ -5,33 +5,15 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "termlib.hpp"
 using namespace std;
-
-class op_rec
-{
-  private:
-    int op[max_op];
-
-  public:
-
-}
-
-class progtype
-{
-  private:
-  //  prog_type[max_code] = new op_rec;
-  op_rec prog_type[max_code];
-
-
-  public:
-}
 
 class config_rec
 {
   private:
     int scanner, weapon, armor, engine, heatsinks, shield, mines;
   public:
-}
+};
 
 class mine_rec
 {
@@ -42,7 +24,7 @@ class mine_rec
 
   public:
 
-}
+};
 
 class robot_rec
 {
@@ -64,19 +46,13 @@ class robot_rec
 
     config = new config_rec; // robclass::config_rec ?? // line 158 in ATR2.PAS not sure how this would
     //good question to ask Dr.Confer
-     prog_type code // code = new prog_type;
+     prog_type code; // code = new prog_type;
     //line 159 in ATR2.PAS should we make a char array or a string type?
    string name, fn;
    mine_rec mine[max_mines];
    //errorlog how should we implemnt the text data type
 
-  public:
-    errorlog
-      {
-
-      }
-
-}
+};
 
 class missile_rec
 {
@@ -133,4 +109,4 @@ class missile_rec
     {
       mspd = x;
     }
-}
+};
