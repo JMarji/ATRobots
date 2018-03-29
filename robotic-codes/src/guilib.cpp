@@ -122,7 +122,7 @@ begin
        line(ltx[4],lty[4],ltx[5],lty[5]);
       end;
     end;
-   if armor>0 then {If we're still alive we need to redraw}
+   if armor>0 then //If we're still alive we need to redraw
     begin
      if arc_count>0   then dec(arc_count);
      if sonar_count>0 then dec(sonar_count);
