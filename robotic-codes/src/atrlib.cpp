@@ -29,6 +29,12 @@ namespace atrlib {
   }
   int customArray (int higher, int lower)
   {
+    if (lower > higher)
+    {
+      int temp = lower;
+      lower = higher;
+      higher = temp;
+    }
     return (higher - lower);
   }
   string ucase(string s)
