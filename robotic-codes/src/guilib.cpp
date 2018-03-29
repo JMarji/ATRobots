@@ -1320,35 +1320,6 @@ begin
   end;
 end;
 
-procedure init_bout;
-var
- i,j,k:integer;
-begin
- game_cycle:=0;
- for i:=0 to max_missiles do
-  with missile[i] do
-   begin a:=0; source:=-1; x:=0; y:=0; lx:=0; ly:=0; mult:=1; end;
- for i:=0 to num_robots do
-  with robot[i]^ do
-   begin
-    {FIFI}
-    mem_watch:=128;
-    {/FIFI}
-    reset_hardware(i);
-    reset_software(i);
-   end;
- if graphix then setscreen;
- {FIFI}
- if graphix and (step_mode>0) then init_debug_window;
- {/FIFI}
- if not graphix then
-  begin
-   textcolor(7);
-   {writeln(#13+'Match ',played,'/',matches,', Battle in progress...');
-   writeln;}
-  end;
-end;
-
 procedure bout;
 var
  i,j,k:integer;

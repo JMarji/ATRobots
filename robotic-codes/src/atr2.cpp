@@ -123,6 +123,9 @@ void delete_compile_report();
 void parse_param(string s);
 void bout();
 void init_bout();
+string operand(int n, int m);
+string mnemonic(int n, int m);
+
 
 int main(int argc, char *argv[])
 {
@@ -362,13 +365,11 @@ void init_bout();
   for(i=0; i <= max_missiles; i++)
   {
     //class missle_rec in robclass.cpp
-    missile[i].set_a(0);
-    missile[i].set_source(-1);
-    missile[i].set_x(0);
-    missile[i].set_y(0);
-    missile[i].set_lx(0);
-    missile[i].set_ly(0);
-    missile[i].set_mult(1);
+    missile[i].x = 
+  }
+  for(i=0; i <= num_robots; i++)
+  {
+
   }
 }
 string operand(int n, int m)
