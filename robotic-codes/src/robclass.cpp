@@ -69,6 +69,10 @@ class robot_rec
         mine_rec newMine;
         mine.push_back(newMine);
       }
+      else
+      {
+        cout << "Too many mines";
+      }
     }
     mine_rec getMine(int index)
     {
