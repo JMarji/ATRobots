@@ -5,7 +5,13 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <vector>
 #include "termlib.hpp"
+
+#define max_robot_lines 8
+#define max_ram 1023
+#define max_mines 63
+
 using namespace std;
 
 typedef struct
@@ -39,11 +45,33 @@ class robot_rec
 
     double x,y,lx,ly,xv,yv,speed,shotstrength,damageadj,speedadj,meters;
 
-    struct config_rec config; // robclass::config_rec ?? // line 158 in ATR2.PAS not sure how this would
+    config_rec config; // robclass::config_rec ?? // line 158 in ATR2.PAS not sure how this would
     //good question to ask Dr.Confer
-    struct prog_type code; // code = new prog_type;
+    prog_type code; // code = new prog_type;
     //line 159 in ATR2.PAS should we make a char array or a string type?
     string name, fn;
-    mine_rec mine[max_mines];
+    vector<mine_rec> mine;
    //errorlog how should we implemnt the text data type
+
+  public:
+    void setArmor(int x)
+    {
+      armor = x;
+    }
+    int getArmor()
+    {
+      return armor;
+    }
+    void addMine()
+    {
+      if (mine.size() <= max_mines)
+      {
+        mine_rec newMine;
+        mine.push_back(newMine);
+      }
+    }
+    mine_rec getMine(int index)
+    {
+      return mine[index];
+    }
 };
