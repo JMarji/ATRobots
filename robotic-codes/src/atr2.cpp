@@ -107,7 +107,7 @@ int step_count;    //step counter used as break flag}
 bool step_loop;     //break flag for stepping}
 
 
-robot_ptr robot[(max_robots+2)];
+robot_ptr robot[customArray(max_robots, -2)];
 missile_rec missile[max_missiles];
 
 FILE text;
@@ -123,6 +123,9 @@ void delete_compile_report();
 void parse_param(string s);
 void bout();
 void init_bout();
+string operand(int n, int m);
+string mnemonic(int n, int m);
+
 
 int main(int argc, char *argv[])
 {
@@ -362,13 +365,17 @@ void init_bout();
   for(i=0; i <= max_missiles; i++)
   {
     //class missle_rec in robclass.cpp
-    missile[i].set_a(0);
-    missile[i].set_source(-1);
-    missile[i].set_x(0);
-    missile[i].set_y(0);
-    missile[i].set_lx(0);
-    missile[i].set_ly(0);
-    missile[i].set_mult(1);
+    missile[i].a = 0;
+    missile[i].source = -1;
+    missile[i].x = 0;
+    missile[i].y = 0;
+    missile[i].lx = 0;
+    missile[i].ly = 0;
+    missile[i].mult = 1;
+  }
+  for(i=0; i <= num_robots; i++)
+  {
+    robot[i].mem_watch = 128;
   }
 }
 string operand(int n, int m)
