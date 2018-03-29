@@ -64,7 +64,7 @@ class robot_rec
     }
     void addMine()
     {
-      if (mine.size() <= max_mines)
+      if (mine.size() < max_mines + 1)
       {
         mine_rec newMine;
         mine.push_back(newMine);
