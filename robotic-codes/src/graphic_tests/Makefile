@@ -1,5 +1,5 @@
 CC=g++
-CARGS=-lSDL2main -lSDL2 -Wall -Wpedantic
+CARGS=-lSDL2main -lSDL2 -lSDL2_gfx -lSDL2_ttf
 TARGET=rcode
 
 all:
