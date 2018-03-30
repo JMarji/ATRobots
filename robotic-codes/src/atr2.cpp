@@ -1,4 +1,4 @@
-#include <iostream>
+j#include <iostream>
 #include <cstdlib>
 #include "atrlib.hpp"
 #include "guilib.hpp"
@@ -125,11 +125,14 @@ void bout();
 void init_bout();
 string operand(int n, int m);
 string mnemonic(int n, int m);
+void reset_hardware(int n);
+void reset_software(int n);
 
 
 int main(int argc, char *argv[])
 {
   int errors = 0;
+  srand(time(NULL));
   init(argc);
   main_func();
   shutdown();
@@ -376,6 +379,26 @@ void init_bout();
   for(i=0; i <= num_robots; i++)
   {
     robot[i].mem_watch = 128;
+
+  }
+}
+void reset_hardware(int n)
+{
+  int i;
+  double d, dd;
+
+  for(i=0; i<= max_robot_lines; i++)
+  {
+    robot[n].ltx[i] = 0;
+    robot[n].tx[i] = 0;
+    robot[n].lty[i] = 0;
+    robot[n].ty[i] = 0;
+  }
+  while(dd>32)// how should we deal with repeat until block in pas code
+  {
+    robot[n].x =rand() % 1000;
+    robot[n].y = rand() % 1000;
+    dd=1000;
   }
 }
 string operand(int n, int m)

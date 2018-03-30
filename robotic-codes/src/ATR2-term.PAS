@@ -1780,7 +1780,7 @@ begin
         if nn in [0..num_robots] then
            ram[5]:=robot[nn]^.transponder;
        end;
-    10:v:=random(65535)+random(2);
+    10:v:=(65535)+random(2);
     16:begin
         nn:=-1;
         if show_arcs then sonar_count:=2;
@@ -2759,7 +2759,8 @@ begin
 end;
 
 {
-procedure toggle_graphix;
+procedure toggle_graphix;  end;
+
 begin
  graph_mode(not graphix);
  if not graphix then
