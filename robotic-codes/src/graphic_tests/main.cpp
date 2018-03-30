@@ -6,8 +6,8 @@
 #include <SDL2/SDL2_gfxPrimitives.h>
 #include <SDL2/SDL_ttf.h>
 
-#define SC_WIDTH 1280
-#define SC_HEIGHT 720
+#define SC_WIDTH 1240
+#define SC_HEIGHT 1024
 #define WINDOW_NAME "Robotic Codes"
 
 int initialize();
@@ -18,6 +18,8 @@ SDL_Renderer* ren = NULL;
 TTF_Font *font = NULL;
 void dGrayRect(int x1, int y1, int x2, int y2);
 void dButton(int x1, int y1, int x2, int y2, char *label);
+void title();
+void dBRect(int x1, int y1, int x2, int y2);
 
 int main(int argc, char* argv[]){
   if (!initialize())
@@ -69,19 +71,31 @@ int initialize(){
 }
 
 void drawMenu(){
-  dGrayRect(0, 0, (SC_WIDTH*0.00806451613), SC_HEIGHT);                 // Left Border
-  dGrayRect(0, 0, SC_WIDTH, (SC_HEIGHT*0.009765625));                   // Top Border
-  dGrayRect(SC_WIDTH-(SC_WIDTH*0.00806451613), 0, SC_WIDTH, SC_HEIGHT); // Right Border
-  dGrayRect(0, SC_HEIGHT-(SC_HEIGHT*0.009765625), SC_WIDTH, SC_HEIGHT); // Bottom Border
-  dGrayRect((SC_WIDTH*0.00806451613),
-      (SC_HEIGHT*0.009765625)*9,
-      SC_WIDTH-(SC_WIDTH*0.00806451613),
-      SC_HEIGHT/2); // file selection background
-  char *labels[] = {"R1", "R2", "R3"};
-  for (int i=0; i<3; i++){
-    dButton((SC_WIDTH*0.0161290323), (SC_HEIGHT*0.09765625)*(i+1), 50, 50, labels[i]);
-  }
-
+  char* labels[] = {(char*)"X", (char*)"R1", (char*)"R2", (char*)"R3", (char*)"R4", (char*)"R5", (char*)"R6"};
+  dGrayRect(0, 0, 10, 1024);                // Left Border
+  dGrayRect(0, 0, 1240, 10);                // Top Border
+  dGrayRect(1230, 0, 1240, 1024);           // Right Border
+  dGrayRect(0, 1014, 1240, 1024);           // Bottom Border
+  title();
+  dGrayRect(10, 90, 1230, 512);             // file selection background
+  dButton(10, 158, 50, 50, labels[0]);      // R1 Close
+  dButton(10, 276, 50, 50, labels[0]);      // R2 Close
+  dButton(10, 394, 50, 50, labels[0]);      // R3 Close
+  dButton(70, 158, 50, 50, labels[1]);      // R1 Open
+  dButton(70, 276, 50, 50, labels[2]);      // R2 Open
+  dButton(70, 394, 50, 50, labels[3]);      // R3 Open
+  dBRect(123, 158, 407, 50);                // File Box R1
+  dBRect(123, 276, 407, 50);                // File Box R2
+  dBRect(123, 394, 407, 50);                // File Box R3
+  dButton(630, 158, 50, 50, labels[0]);      // R4 Close
+  dButton(630, 276, 50, 50, labels[0]);      // R5 Close
+  dButton(630, 394, 50, 50, labels[0]);      // R6 Close
+  dButton(690, 158, 50, 50, labels[4]);      // R4 Open
+  dButton(690, 276, 50, 50, labels[5]);      // R5 Open
+  dButton(690, 394, 50, 50, labels[6]);      // R6 Open
+  dBRect(743, 158, 407, 50);                // File Box R4
+  dBRect(743, 276, 407, 50);                // File Box R5
+  dBRect(743, 394, 407, 50);                // File Box R6
 }
 
 void dGrayRect(int x1, int y1, int x2, int y2){
@@ -94,11 +108,34 @@ void dGrayRect(int x1, int y1, int x2, int y2){
   boxRGBA(ren, x1, y1, x2, y2, 0x96, 0x96, 0x96, 0xFF);
 }
 
+void dBRect(int x1, int y1, int x2, int y2){
+  x2 += x1;
+  y2 += y1;
+  boxRGBA(ren, x1, y1, x2, y2, 0x00, 0x00, 0x00, 0xFF);
+}
+
+void title(){
+  if (font == NULL){
+    font = TTF_OpenFont("DS-DIGI.TTF", 60);
+  }
+  SDL_Color color={255,255,255};
+  SDL_Surface* surfaceMessage = TTF_RenderText_Solid(font, "Robotic Codes", color);
+  SDL_Texture* Message = SDL_CreateTextureFromSurface(ren, surfaceMessage);
+  SDL_Rect Message_rect; //create a rect
+  Message_rect.x = 10;  //controls the rect's x coordinate
+  Message_rect.y = 10; // controls the rect's y coordinte
+  Message_rect.w = 780; // controls the width of the rect
+  Message_rect.h = 60; // controls the height of the rect
+  SDL_RenderCopy(ren, Message, NULL, &Message_rect);
+  SDL_FreeSurface(surfaceMessage);
+  font=NULL;
+}
+
 void dButton(int x1, int y1, int x2, int y2, char *label){  // can only take in a single line of text
   x2 += x1; //convert offsets to absolute positions
   y2 += y1;
   if (font == NULL){
-    font = TTF_OpenFont("Computerfont.ttf", (y2-y1-6));
+    font = TTF_OpenFont("DS-DIGI.TTF", (y2-y1-6));
   }
   boxRGBA(ren, x1+1, y1+1, x2-1, y2-1, 0xFF, 0xFF, 0xFF, 0xFF); // draw button
   boxRGBA(ren, x1+3, y1+3, x2-3, y2-3, 0xAA, 0xAA, 0xAA, 0xFF);
