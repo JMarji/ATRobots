@@ -1,9 +1,9 @@
-j#include <iostream>
+#include <iostream>
 #include <cstdlib>
 #include "atrlib.hpp"
 #include "guilib.hpp"
 #include "termlib.hpp"
-#include "errorloging.hpp"
+#include "robclass.cpp"
 #include <iostream>
 
 #define byte uint8_t
@@ -394,12 +394,53 @@ void reset_hardware(int n)
     robot[n].lty[i] = 0;
     robot[n].ty[i] = 0;
   }
-  while(dd>32)// how should we deal with repeat until block in pas code
+  do // do while == repeat until
   {
     robot[n].x =rand() % 1000;
     robot[n].y = rand() % 1000;
     dd=1000;
+    for(i=0; i <= num_robots; i++)
+    {
+      d=distance(robot[n].x,robot[n].y,robot[i].x,robot[i].y);
+      if(robot[i].armor > 0) && (i != n) && (d < dd)
+      {
+        dd=d;
+      }
+    }
+  }while(dd>32);
+
+  for(i=0; i<=max_mines; i++)
+  {
+    mine[i].x=-1;
+    mine[i].y=-1;
+    mine[i].yield=0;
+    mine[i].detect=0;
+    mine[i].detonate = false;
   }
+  robot[n].lx=-1;
+  robot[n].ly=-1;
+  robot[n].hd=rand() % 256;
+  robot[n].shift=0;
+  robot[n].lhd=robot[n].hd + 1;
+  robot[n].lshift=robot[n].shift + 1;
+  robot[n].spd=0;
+  robot[n].speed=0;
+  robot[n].cooling=false;
+  robot[n].armor=100;
+  robot[n].larmor=0;
+  robot[n].heat=0;
+  robot[n].lheat=1;
+  robot[n].match_shots=0;
+  robot[n].won=false;
+  robot[n].last_damage=0;
+  robot[n].last_hit=0;
+  robot[n].transponder=n+1;
+  robot[n].meters=0;
+  robot[n].shutdown=400;
+  robot[n].shields_up=false;
+  robot[n].channel=robot[n].transponder;
+  robot[n].startkills=robot[n].kills;
+  robot_config(n);
 }
 string operand(int n, int m)
 {
