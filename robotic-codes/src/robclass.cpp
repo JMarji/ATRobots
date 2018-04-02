@@ -54,6 +54,71 @@ class robot_rec
    //errorlog how should we implemnt the text data type
 
   public:
+    void setWins(long x)
+    {
+      wins = x;
+    }
+    void setTrials(long x)
+    {
+      trials = x;
+    }
+    void setKills(long x)
+    {
+      kills = x;
+    }
+    void setDeaths(long x)
+    {
+      deaths = x;
+    }
+    void setShots_fired(long x)
+    {
+      shots_fired = x;
+    }
+    void setMatch_shots(long x)
+    {
+      match_shots = x;
+    }
+    void setHits(long x)
+    {
+      hits = x;
+    }
+    void setDamage_total(long x)
+    {
+      damage_total = x;
+    }
+    void setCycles_lived(long x)
+    {
+      cycles_lived = x;
+    }
+    void setPlen(int x)
+    {
+      plen = x;
+    }
+    void setMax_time(int x)
+    {
+      max_time = x;
+    }
+    void setName(string x)
+    {
+      name = x;
+    }
+    void setFn(string x)
+    {
+      fn = x;
+    }
+    void setSpeed (double x)
+    {
+      speed = x;
+    }
+    void setArc_count(int x)
+    {
+      arc_count = x;
+    }
+    void setSonar_count(int x)
+    {
+      sonar_count = x;
+    }
+    void setRobot_time_limit()
     void setArmor(int x)
     {
       armor = x;
@@ -73,6 +138,10 @@ class robot_rec
       {
         cout << "Too many mines";
       }
+    }
+    void setMines(int x)
+    {
+      mines = x;
     }
     mine_rec getMine(int index)
     {
