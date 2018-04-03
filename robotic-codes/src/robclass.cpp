@@ -54,6 +54,7 @@ class robot_rec
    //errorlog how should we implemnt the text data type
 
   public:
+
     void setWins(long x)
     {
       wins = x;
@@ -106,7 +107,7 @@ class robot_rec
     {
       fn = x;
     }
-    void setSpeed (double x)
+    void setSpeed(double x)
     {
       speed = x;
     }
@@ -118,10 +119,17 @@ class robot_rec
     {
       sonar_count = x;
     }
-    void setRobot_time_limit()
+    void setRobot_time_limit(int x)
+    {
+      robot_time_limit = x;
+    }
     void setArmor(int x)
     {
       armor = x;
+    }
+    void setConfig_scanner(int x)
+    {
+      config.scanner = x;
     }
     int getArmor()
     {
