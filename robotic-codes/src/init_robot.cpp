@@ -6,7 +6,7 @@ robot_rec robot[16];
 
 int main(void)
 {
-  for (int i = 0; i <= 16; i++)
+  for (int i = 0; i <= 15; i++)
   {
     init_robot(i);
   }
