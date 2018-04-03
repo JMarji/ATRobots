@@ -272,7 +272,7 @@ void init(int argc)
   }
   for (i = num_robots + 1; i <= maxrobots + 2; i++)
   {
-    robot[i] = robot[0];
+    robot[n] = robot[0];
   }
 }
 
@@ -378,7 +378,7 @@ void init_bout();
   }
   for(i=0; i <= num_robots; i++)
   {
-    robot[i].mem_watch = 128;
+    robot[n].mem_watch = 128;
 
   }
 }
@@ -386,30 +386,30 @@ void init_robot (int n)
 {
   int i, j, k, l;
 
-  robot[i].setWins(0);
-  robot[i].setTrials(0);
-  robot[i].setKills(0);
-  robot[i].setDeaths(0);
-  robot[i].setShots_fired(0);
-  robot[i].setMatch_shots(0);
-  robot[i].setHits(0);
-  robot[i].setDamage_total(0);
-  robot[i].setCycles_lived(0);
-  robot[i].setError_count(0);
-  robot[i].setPlen(0);
-  robot[i].setMax_time(0);
-  robot[i].setName(" ");
-  robot[i].setFn(" "); 
-  robot[i].setSpeed(0);
-  robot[i].setArc_count(0);
-  robot[i].setSonar_count(0);
-  robot[i].setRobot_time_limit(0);
-  robot[i].setScanRange(1500);
-  robot[i].setShotStrength(1);
-  robot[i].setDamageAdj(1);
-  robot[i].setSpeedAdj(1);
-  robot[i].setMines(0);
-  robot[i].setConfig_scanner(5);
+  robot[n].setWins(0);
+  robot[n].setTrials(0);
+  robot[n].setKills(0);
+  robot[n].setDeaths(0);
+  robot[n].setShots_fired(0);
+  robot[n].setMatch_shots(0);
+  robot[n].setHits(0);
+  robot[n].setDamage_total(0);
+  robot[n].setCycles_lived(0);
+  robot[n].setError_count(0);
+  robot[n].setPlen(0);
+  robot[n].setMax_time(0);
+  robot[n].setName(" ");
+  robot[n].setFn(" ");
+  robot[n].setSpeed(0);
+  robot[n].setArc_count(0);
+  robot[n].setSonar_count(0);
+  robot[n].setRobot_time_limit(0);
+  robot[n].setScanRange(1500);
+  robot[n].setShotStrength(1);
+  robot[n].setDamageAdj(1);
+  robot[n].setSpeedAdj(1);
+  robot[n].setMines(0);
+  robot[n].setConfig_scanner(5);
 }
 void reset_hardware(int n)
 {
@@ -430,8 +430,8 @@ void reset_hardware(int n)
     dd=1000;
     for(i=0; i <= num_robots; i++)
     {
-      d=distance(robot[n].x,robot[n].y,robot[i].x,robot[i].y);
-      if(robot[i].armor > 0) && (i != n) && (d < dd)
+      d=distance(robot[n].x,robot[n].y,robot[n].x,robot[n].y);
+      if(robot[n].armor > 0) && (i != n) && (d < dd)
       {
         dd=d;
       }
