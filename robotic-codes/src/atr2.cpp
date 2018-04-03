@@ -276,35 +276,6 @@ void init(int argc)
   }
 }
 
-void init_robot (int n)
-{
-  int i, j, k, l;
-
-  robot[i].setWins(0);
-  robot[i].setTrials(0);
-  robot[i].setKills(0);
-  robot[i].setDeaths(0);
-  robot[i].setShots_fired(0);
-  robot[i].setMatch_shots(0);
-  robot[i].setHits(0);
-  robot[i].setDamage_total(0);
-  robot[i].setCycles_lived(0);
-  //robot[i].setError_count(0);  May use this, may notice
-  robot[i].setPlen(0);
-  robot[i].setMax_time(0);
-  robot[i].setName(" ");
-  robot[i].setFn(" ");
-  robot[i].setSpeed(0);
-  robot[i].setArc_count(0);
-  robot[i].setSonar_count(0);
-  robot[i].setRobot_time_limit(0);
-  robot[i].setScanRange(1500);
-  robot[i].setShotStrength(1);
-  robot[i].setDamageAdj(1);
-  robot[i].setSpeedAdj(1);
-  robot[i].setMines(0);
-}
-
 void main_func()
 {
   int i,j,k,l,n,w;
@@ -411,6 +382,7 @@ void init_bout();
 
   }
 }
+
 void reset_hardware(int n)
 {
   int i;
@@ -470,6 +442,28 @@ void reset_hardware(int n)
   robot[n].channel=robot[n].transponder;
   robot[n].startkills=robot[n].kills;
   robot_config(n);
+}
+void reset_software(int n)
+{
+  int i;
+  for(i=0; i<=max_ram; i++)
+  {
+    robot[n].ram[i]=0;
+    robot[n].ram[71]=768;
+    robot[n].thd = hd;
+    robot[n].tspd =0;
+    robot[n].scanarc =8;
+    robot[n].shift = 0;
+    robot[n].err=0;
+    robot[n].overburn=false;
+    robot[n].keepshift=false;
+    robot[n].ip = 0;
+    robot[n].accuracy=0;
+    robot[n].meters=0;
+    robot[n].delay_left=0;
+    robot[n].time_left=0;
+    robot[n].shields_up=false;
+  }
 }
 string operand(int n, int m)
 {
