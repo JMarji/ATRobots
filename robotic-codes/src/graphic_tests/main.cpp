@@ -34,6 +34,8 @@ int main(int argc, char* argv[]){
     while (SDL_PollEvent(&event) != 0){ // handle input
       if (event.type == SDL_QUIT)
         quit_status = true;
+      if (event.type == SDL_MOUSEBUTTONUP)
+        // If Button up...
     }
     // Show things
     SDL_RenderPresent(ren);
