@@ -6,8 +6,8 @@ using namespace std;
 int main (void)
 {
   robot_rec robot;
-  robot.setArmor(4);
-  cout << "Armor: "<< robot.getArmor() << endl;
+  robot.setHits(15);
+  cout << "Hits: "<< robot.getHits() << endl;
   robot.addMine();
   mine_rec testMine = robot.getMine(0);
   testMine.x = 300;
