@@ -41,7 +41,7 @@ class robot_rec
     hits,damage_total,cycles_lived,error_count;
 
     int tx[(max_robot_lines - 1)], ltx[(max_robot_lines - 1)],
-     ty[(max_robot_lines - 1)], lty[(max_robot_lines - 1)], ram[max_ram]; //max_ram might be declared as max rad by mistake !!!
+     ty[(max_robot_lines - 1)], lty[(max_robot_lines - 1)], ram[max_ram + 1]; //max_ram might be declared as max rad by mistake !!!
 
     double x,y,lx,ly,xv,yv,speed,shotstrength,damageadj,speedadj,meters;
 
@@ -54,7 +54,7 @@ class robot_rec
    //errorlog how should we implemnt the text data type
 
   public:
-
+    prog_type code;
     void setWins(long x)
     {
       wins = x;
@@ -82,6 +82,10 @@ class robot_rec
     void setHits(long x)
     {
       hits = x;
+    }
+    long getHits()
+    {
+      return hits;
     }
     void setDamage_total(long x)
     {
@@ -127,9 +131,37 @@ class robot_rec
     {
       armor = x;
     }
+    void setRam(int c, int x)
+    {
+      ram[c] = x;
+    }
     void setConfig_scanner(int x)
     {
       config.scanner = x;
+    }
+    void setConfig_weapon(int x)
+    {
+      config.weapon = x;
+    }
+    void setConfig_armor(int x)
+    {
+      config.armor = x;
+    }
+    void setConfig_engine(int x)
+    {
+      config.engine = x;
+    }
+    void setConfig_heatsinks(int x)
+    {
+      config.heatsinks = x;
+    }
+    void setConfig_shield(int x)
+    {
+      config.shield = x;
+    }
+    void setConfig_mines(int x)
+    {
+      config.mines = x;
     }
     int getArmor()
     {
