@@ -39,4 +39,26 @@ void init_robot (int n)
   robot[n].setSpeedAdj(1);
   robot[n].setMines(0);
   robot[n].setConfig_scanner(5);
+  robot[n].setConfig_weapon(2);
+  robot[n].setConfig_armor(2);
+  robot[n].setConfig_engine(2);
+  robot[n].setConfig_heatsinnks(1);
+  robot[n].setConfig_shield(0);
+  robot[n].setConfig_mines(0);
+
+  for (i = 0; i <= max_ram; i++)
+  {
+    robot[n].setRam(i, 0);
+  }
+  robot[n].setRam(71, 768);
+
+  for (i = 0; i <= max_op; i++)
+  {
+    for (k = 0; k <= max_code; k++)
+    {
+      robot[n].code[i].op[k] = 0;
+    }
+  }
+  //reset_hardware(n);
+  //reset_software(n);
 }
