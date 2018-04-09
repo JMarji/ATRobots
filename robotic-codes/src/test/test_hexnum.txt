@@ -1,0 +1,18 @@
+test_hexnum.cpp: In function ‘int main()’:
+test_hexnum.cpp:8:3: error: ‘byte’ was not declared in this scope
+   byte num;
+   ^~~~
+test_hexnum.cpp:12:14: error: ‘num’ was not declared in this scope
+   x = hexnum(num);
+              ^~~
+test_hexnum.cpp:12:14: note: suggested alternative: ‘enum’
+   x = hexnum(num);
+              ^~~
+              enum
+test_hexnum.cpp:12:7: error: ‘hexnum’ was not declared in this scope
+   x = hexnum(num);
+       ^~~~~~
+test_hexnum.cpp:12:7: note: suggested alternative: ‘enum’
+   x = hexnum(num);
+       ^~~~~~
+       enum

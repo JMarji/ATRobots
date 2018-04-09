@@ -1,0 +1,17 @@
+test_distance.cpp: In function ‘int main()’:
+test_distance.cpp:19:30: error: no matching function for call to ‘distance(float&, float&, float&, float&)’
+   j = distance(x1, y1, x2, y2);
+                              ^
+In file included from /usr/include/c++/7/bits/stl_algobase.h:66:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/ios:40,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from test_distance.cpp:1:
+/usr/include/c++/7/bits/stl_iterator_base_funcs.h:138:5: note: candidate: template<class _InputIterator> typename std::iterator_traits<_Iterator>::difference_type std::distance(_InputIterator, _InputIterator)
+     distance(_InputIterator __first, _InputIterator __last)
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator_base_funcs.h:138:5: note:   template argument deduction/substitution failed:
+test_distance.cpp:19:30: note:   candidate expects 2 arguments, 4 provided
+   j = distance(x1, y1, x2, y2);
+                              ^

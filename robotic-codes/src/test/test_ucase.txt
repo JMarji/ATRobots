@@ -1,0 +1,4 @@
+test_ucase.cpp: In function ‘int main()’:
+test_ucase.cpp:10:15: error: ‘ucase’ is not a member of ‘atrlib’
+   s = atrlib::ucase(s);
+               ^~~~~

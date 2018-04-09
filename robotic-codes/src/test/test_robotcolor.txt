@@ -1,0 +1,4 @@
+test_robotcolor.cpp: In function ‘int main()’:
+test_robotcolor.cpp:16:7: error: ‘robot_color’ was not declared in this scope
+   l = robot_color(k);
+       ^~~~~~~~~~~

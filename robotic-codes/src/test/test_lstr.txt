@@ -1,0 +1,4 @@
+test_lstr.cpp: In function ‘int main()’:
+test_lstr.cpp:11:3: error: ‘lstr’ was not declared in this scope
+   lstr(s1,i);
+   ^~~~

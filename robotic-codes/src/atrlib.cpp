@@ -5,8 +5,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <fstream>
+#include "/usr/include/boost/algorithm/string/trim.hpp"
 #include "atrlib.hpp"
-
 #define _USE_MATH_DEFINES
 #define byte uint8_t
 #define word uint16_t
@@ -37,7 +37,11 @@ namespace atrlib {
     }
     return (higher - lower);
   }
-  string ucase(string s)
+  string btrim(string s1)
+  {
+    return trim(s1);
+  }
+  string atrlib::ucase(string s)
   {
     int i;
     if (s.length() >= 1)
@@ -476,4 +480,4 @@ namespace atrlib {
     return degrees;
   }
 
-}
+};

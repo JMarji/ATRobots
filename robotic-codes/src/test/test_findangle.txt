@@ -1,0 +1,4 @@
+test_findangle.cpp: In function ‘int main()’:
+test_findangle.cpp:19:7: error: ‘find_angle’ was not declared in this scope
+   j = find_angle(x1, y1, x2, y2);
+       ^~~~~~~~~~

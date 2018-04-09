@@ -1,0 +1,17 @@
+test_rstr.cpp: In function ‘int main()’:
+test_rstr.cpp:12:11: error: expected initializer before ‘l’
+   int num l;
+           ^
+test_rstr.cpp:14:10: error: ‘num’ was not declared in this scope
+   cin >> num;
+          ^~~
+test_rstr.cpp:14:10: note: suggested alternative: ‘enum’
+   cin >> num;
+          ^~~
+          enum
+test_rstr.cpp:15:10: error: ‘l’ was not declared in this scope
+   cin >> l;
+          ^
+test_rstr.cpp:16:8: error: ‘rstr’ was not declared in this scope
+   s1 = rstr(s, num);
+        ^~~~

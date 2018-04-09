@@ -1,0 +1,18 @@
+test_valuer.cpp: In function ‘int main()’:
+test_valuer.cpp:10:3: error: expected ‘;’ before ‘float’
+   float num;
+   ^~~~~
+test_valuer.cpp:11:3: error: ‘num’ was not declared in this scope
+   num = value(s);
+   ^~~
+test_valuer.cpp:11:3: note: suggested alternative: ‘enum’
+   num = value(s);
+   ^~~
+   enum
+test_valuer.cpp:11:9: error: ‘value’ was not declared in this scope
+   num = value(s);
+         ^~~~~
+test_valuer.cpp:11:9: note: suggested alternative: ‘valloc’
+   num = value(s);
+         ^~~~~
+         valloc

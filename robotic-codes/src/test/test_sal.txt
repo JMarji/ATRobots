@@ -1,0 +1,4 @@
+test_sal.cpp: In function ‘int main()’:
+test_sal.cpp:16:7: error: ‘sal’ was not declared in this scope
+   l = sal(num,k);
+       ^~~
