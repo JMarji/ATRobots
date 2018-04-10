@@ -1,4 +1,0 @@
-test_ror.cpp: In function ‘int main()’:
-test_ror.cpp:16:7: error: ‘ror’ was not declared in this scope
-   l = ror(num,k);
-       ^~~

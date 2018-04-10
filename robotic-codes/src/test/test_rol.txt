@@ -1,8 +1,0 @@
-test_rol.cpp: In function ‘int main()’:
-test_rol.cpp:16:7: error: ‘rol’ was not declared in this scope
-   l = rol(num,k);
-       ^~~
-test_rol.cpp:16:7: note: suggested alternative: ‘atol’
-   l = rol(num,k);
-       ^~~
-       atol

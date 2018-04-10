@@ -1,8 +1,0 @@
-test_bin.cpp: In function ‘int main()’:
-test_bin.cpp:19:7: error: ‘bin’ was not declared in this scope
-   s = bin(num);
-       ^~~
-test_bin.cpp:19:7: note: suggested alternative: ‘main’
-   s = bin(num);
-       ^~~
-       main

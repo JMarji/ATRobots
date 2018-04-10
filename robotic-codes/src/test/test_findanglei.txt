@@ -1,4 +1,0 @@
-test_findanglei.cpp: In function ‘int main()’:
-test_findanglei.cpp:19:9: error: ‘find_anglei’ was not declared in this scope
-   num = find_anglei(x1, y1, x2, y2);
-         ^~~~~~~~~~~

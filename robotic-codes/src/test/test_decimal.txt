@@ -1,4 +1,0 @@
-test_decimal.cpp: In function ‘int main()’:
-test_decimal.cpp:19:7: error: ‘decimal’ was not declared in this scope
-   s = decimal(num, l);
-       ^~~~~~~

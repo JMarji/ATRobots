@@ -1,3 +1,4 @@
+#!/bin/bash
 
 g++ test_lstr.cpp >& test_lstr.txt
 

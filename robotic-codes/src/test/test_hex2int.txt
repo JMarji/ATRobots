@@ -1,8 +1,0 @@
-test_hex2int.cpp: In function ‘int main()’:
-test_hex2int.cpp:16:7: error: ‘hex2int’ was not declared in this scope
-   l = hex2int(s);
-       ^~~~~~~
-test_hex2int.cpp:16:7: note: suggested alternative: ‘exit’
-   l = hex2int(s);
-       ^~~~~~~
-       exit

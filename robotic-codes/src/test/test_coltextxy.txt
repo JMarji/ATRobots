@@ -1,4 +1,0 @@
-test_coltextxy.cpp: In function ‘int main()’:
-test_coltextxy.cpp:19:3: error: ‘coltextxy’ was not declared in this scope
-   coltextxy(num, l, s, i);
-   ^~~~~~~~~

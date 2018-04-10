@@ -1,8 +1,0 @@
-test_flushkey.cpp: In function ‘int main()’:
-test_flushkey.cpp:19:3: error: ‘flushkey’ was not declared in this scope
-   flushkey();
-   ^~~~~~~~
-test_flushkey.cpp:19:3: note: suggested alternative: ‘fflush’
-   flushkey();
-   ^~~~~~~~
-   fflush

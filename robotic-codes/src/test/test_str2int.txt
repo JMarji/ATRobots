@@ -1,8 +1,0 @@
-test_str2int.cpp: In function ‘int main()’:
-test_str2int.cpp:16:7: error: ‘str2int’ was not declared in this scope
-   l = str2int(s);
-       ^~~~~~~
-test_str2int.cpp:16:7: note: suggested alternative: ‘stdin’
-   l = str2int(s);
-       ^~~~~~~
-       stdin

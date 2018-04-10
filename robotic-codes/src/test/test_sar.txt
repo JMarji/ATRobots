@@ -1,4 +1,0 @@
-test_sar.cpp: In function ‘int main()’:
-test_sar.cpp:16:7: error: ‘sar’ was not declared in this scope
-   l = sar(num,k);
-       ^~~

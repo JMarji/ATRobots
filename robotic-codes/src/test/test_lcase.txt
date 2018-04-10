@@ -1,7 +1,0 @@
-test_lcase.cpp: In function ‘int main()’:
-test_lcase.cpp:8:12: error: expected initializer before ‘s1’
-   string s s1;
-            ^~
-test_lcase.cpp:9:3: error: ‘s’ was not declared in this scope
-   s = "hello"
-   ^
