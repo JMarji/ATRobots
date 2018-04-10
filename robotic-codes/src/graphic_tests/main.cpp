@@ -21,6 +21,7 @@ void dGrayRect(int x1, int y1, int x2, int y2);
 void dButton(int x1, int y1, int x2, int y2, char *label);
 void dBRect(int x1, int y1, int x2, int y2);
 void drawLabel(int x, int y, int w, int h, char *label);
+void drawstat(int x);
 
 int main(int argc, char* argv[]){
   if (!initialize())
@@ -35,7 +36,9 @@ int main(int argc, char* argv[]){
       if (event.type == SDL_QUIT)
         quit_status = true;
       if (event.type == SDL_MOUSEBUTTONUP)
-        // If Button up...
+        drawstat(0);
+      if (event.type == SDL_MOUSEBUTTONDOWN)
+        drawstat(255);
     }
     // Show things
     SDL_RenderPresent(ren);
@@ -162,4 +165,8 @@ void drawLabel(int x, int y, int w, int h, char *label){
   messg_rct.h = h;
   SDL_RenderCopy(ren, messg_tx, NULL, &messg_rct);
   SDL_FreeSurface(messg);
+}
+
+void drawstat(int x){
+  filledCircleRGBA(ren, 800, 800, 50, x, 0, 0, 255);
 }
