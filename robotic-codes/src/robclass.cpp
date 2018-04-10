@@ -47,7 +47,7 @@ class robot_rec
 
     config_rec config; // robclass::config_rec ?? // line 158 in ATR2.PAS not sure how this would
     //good question to ask Dr.Confer
-    prog_type code; // code = new prog_type;
+    // code = new prog_type;
     //line 159 in ATR2.PAS should we make a char array or a string type?
     string name, fn;
     vector<mine_rec> mine;
