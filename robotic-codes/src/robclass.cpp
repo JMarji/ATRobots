@@ -101,6 +101,83 @@ class robot_rec
       meters = x;
     }
     // end of setter for doubles joe marji
+    // some int setter that havent been already made
+    void setmem_watch(int x)
+    {
+      mem_watch = x;
+    }
+    void sethd(int x)
+    {
+      hd =x ;
+    }
+    void setthd(int x)
+    {
+      thd = x;
+    }
+    void setlhd(int x)
+    {
+      lhd = x;
+    }
+    void setspd(int x)
+    {
+      spd = x;
+    }
+    void settspd(int x)
+    {
+      tspd =x ;
+    }
+    void setlarmor(int x)
+    {
+      larmor = x;
+    }
+    void setheat(int x)
+    {
+      heat = x;
+    }
+    void setlheat(int x)
+    {
+      lheat = x;
+    }
+    void setip(int x)
+    {
+      ip = x;
+    }
+    void setscanarc(int x)
+    {
+      scanarc = x;
+    }
+    void setaccuracy(int x)
+    {
+      accuracy = x;
+    }
+    void setshift(int x)
+    {
+      shift = x;
+    }
+    void seterr(int x)
+    {
+      err = x;
+    }
+    void setdelay_left(int x)
+    {
+      delay_left = x;
+    }
+    void settime_left(int x)
+    {
+      time_left = x;
+    }
+    void lshift(int x)
+    {
+      lshift = x;
+    }
+    void setscanrange(int x)
+    {
+      scanrange = x;
+    }
+    void setlast_damage(int x)
+    {
+      last_damage = x;
+    }
     void setWins(long x)
     {
       wins = x;
@@ -156,10 +233,6 @@ class robot_rec
     void setFn(string x)
     {
       fn = x;
-    }
-    void setSpeed(double x)
-    {
-      speed = x;
     }
     void setArc_count(int x)
     {
