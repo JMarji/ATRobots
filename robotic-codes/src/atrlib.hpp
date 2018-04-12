@@ -10,7 +10,8 @@ namespace atrlib {
     string lstr(string s1, int l);
     string ucase(string s);
     string btrim(string s1);
-    char hexnum(unsigned char num);
+    int customArray(int high, int low);
+    char hexnum(byte num);
     string hexb(unsigned char num);
     string hex(uint num);
     float valuer(string i);
@@ -38,7 +39,7 @@ namespace atrlib {
     float find_angle(float xx, float yy, float tx, float ty);
     int find_anglei(float xx, float yy, float tx, float ty);
     string bin(int n);
-    string decimal(int num, int length);    
+    string decimal(int num, int length);
     void coltextxy(int x, int y, string s, unsigned char c);
     void flushkey();
     void calibrate_timing();
@@ -53,4 +54,4 @@ namespace atrlib {
     void chirp();
     void click();
   };
-}
+};

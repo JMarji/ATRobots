@@ -55,6 +55,52 @@ class robot_rec
 
   public:
     prog_type code;
+    //setter block for setting doubles
+    void setx(double x)
+    {
+      x = x;
+    }
+    void sety(double x)
+    {
+      y = x;
+    }
+    void setlx(double x)
+    {
+      lx = x;
+    }
+    void setly(double x)
+    {
+      ly =x;
+    }
+    void setxv(double x)
+    {
+      xv = x;
+    }
+    void setyv(double x)
+    {
+      yv =x;
+    }
+    void setspeed(double x)
+    {
+      speed=x;
+    }
+    void setshotstrenght(double x)
+    {
+      shotstrength = x;
+    }
+    void setdamageadj(double x)
+    {
+      damageadj =x;
+    }
+    void setspeedadj(double x)
+    {
+      speedadj = x;
+    }
+    void set meters(double x)
+    {
+      meters = x;
+    }
+    // end of setter for doubles joe marji
     void setWins(long x)
     {
       wins = x;

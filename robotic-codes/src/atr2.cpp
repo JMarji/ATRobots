@@ -120,6 +120,7 @@ void init(int argc);
 void main_func();
 void shutdown();
 void delete_compile_report();
+void write_compile_report();
 void parse_param(string s);
 void bout();
 void init_bout();
@@ -127,6 +128,7 @@ string operand(int n, int m);
 string mnemonic(int n, int m);
 void reset_hardware(int n);
 void reset_software(int n);
+void init_robot(int n);
 
 
 int main(int argc, char *argv[])
@@ -381,9 +383,10 @@ void init_bout();
     robot[i].mem_watch = 128;
     reset_hardware(i);
     reset_software(i);
+    // if not graphix block in pas code
   }
 }
-void init_robot (int n)
+void init_robot(int n)
 {
   int i, j, k, l;
 
@@ -412,6 +415,7 @@ void init_robot (int n)
   robot[i].setMines(0);
   robot[i].setConfig_scanner(5);
 }
+// have to come up with a consences on syntax
 void reset_hardware(int n)
 {
   int i;
