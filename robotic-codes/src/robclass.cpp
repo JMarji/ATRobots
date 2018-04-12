@@ -52,11 +52,10 @@ class robot_rec
     string name, fn;
     vector<mine_rec> mine;
    //errorlog how should we implemnt the text data type
-   //errorlog how should we implemnt the text data type
 
   public:
     prog_type code;
-    void setWins(long x)
+    void set_wins(long x)
     {
       wins = x;
     }
@@ -67,7 +66,7 @@ class robot_rec
     void set_kills(long x)
     {
       kills = x;
-    }
+    } //Tst changce
     void set_deaths(long x)
     {
       deaths = x;
@@ -112,11 +111,11 @@ class robot_rec
     {
       fn = x;
     }
-    void setSpeed(double x)
+    void set_speed(double x)
     {
       speed = x;
     }
-    void setArc_count(int x)
+    void set_arc_count(int x)
     {
       arc_count = x;
     }
