@@ -56,133 +56,133 @@ class robot_rec
 
   public:
     prog_type code;
-    void setx(double x)
+    void set_x(double x)
     {
       x = x;
     }
-    void sety(double x)
+    void set_y(double x)
     {
       y = x;
     }
-    void setlx(double x)
+    void set_lx(double x)
     {
       lx = x;
     }
-    void setly(double x)
+    void set_ly(double x)
     {
       ly =x;
     }
-    void setxv(double x)
+    void set_xv(double x)
     {
       xv = x;
     }
-    void setyv(double x)
+    void set_yv(double x)
     {
       yv =x;
     }
-    void setspeed(double x)
+    void set_speed(double x)
     {
       speed=x;
     }
-    void setshotstrenght(double x)
+    void set_shotstrenght(double x)
     {
       shotstrength = x;
     }
-    void setdamageadj(double x)
+    void set_damageadj(double x)
     {
       damageadj =x;
     }
-    void setspeedadj(double x)
+    void set_speedadj(double x)
     {
       speedadj = x;
     }
-    void set meters(double x)
+    void set_meters(double x)
     {
       meters = x;
     }
     // end of setter for doubles joe marji
     // some int setter that havent been already made
-    void setmem_watch(int x)
+    void set_mem_watch(int x)
     {
       mem_watch = x;
     }
-    void sethd(int x)
+    void set_hd(int x)
     {
       hd =x ;
     }
-    void setthd(int x)
+    void set_thd(int x)
     {
       thd = x;
     }
-    void setlhd(int x)
+    void set_lhd(int x)
     {
       lhd = x;
     }
-    void setspd(int x)
+    void set_spd(int x)
     {
       spd = x;
     }
-    void settspd(int x)
+    void set_tspd(int x)
     {
       tspd =x ;
     }
-    void setlarmor(int x)
+    void set_larmor(int x)
     {
       larmor = x;
     }
-    void setheat(int x)
+    void set_heat(int x)
     {
       heat = x;
     }
-    void setlheat(int x)
+    void set_lheat(int x)
     {
       lheat = x;
     }
-    void setip(int x)
+    void set_ip(int x)
     {
       ip = x;
     }
-    void setscanarc(int x)
+    void set_scanarc(int x)
     {
       scanarc = x;
     }
-    void setaccuracy(int x)
+    void set_accuracy(int x)
     {
       accuracy = x;
     }
-    void setshift(int x)
+    void set_shift(int x)
     {
       shift = x;
     }
-    void seterr(int x)
+    void set_err(int x)
     {
       err = x;
     }
-    void setdelay_left(int x)
+    void set_delay_left(int x)
     {
       delay_left = x;
     }
-    void settime_left(int x)
+    void set_time_left(int x)
     {
       time_left = x;
     }
-    void lshift(int x)
+    void set_lshift(int x)
     {
       lshift = x;
     }
-    void setscanrange(int x)
+    void set_scanrange(int x)
     {
       scanrange = x;
     }
-    void setlast_damage(int x)
+    void set_last_damage(int x)
     {
       last_damage = x;
     }
-    void last_hit(int x)
+    void set_last_hit(int x)
     {
       last_hit = x;
     }
-    void settransponder(int x)
+    void set_transponder(int x)
     {
       transponder = x;
     }

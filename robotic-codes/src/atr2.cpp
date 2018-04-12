@@ -380,7 +380,7 @@ void init_bout();
   }
   for(i=0; i <= num_robots; i++)
   {
-    robot[i].mem_watch = 128;
+    robot[i].set_mem_watch(128);
     reset_hardware(i);
     reset_software(i);
     // if not graphix block in pas code
