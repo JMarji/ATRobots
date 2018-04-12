@@ -52,6 +52,7 @@ class robot_rec
     string name, fn;
     vector<mine_rec> mine;
    //errorlog how should we implemnt the text data type
+   //errorlog how should we implemnt the text data type
 
   public:
     prog_type code;
@@ -59,55 +60,55 @@ class robot_rec
     {
       wins = x;
     }
-    void setTrials(long x)
+    void set_trials(long x)
     {
       trials = x;
     }
-    void setKills(long x)
+    void set_kills(long x)
     {
       kills = x;
     }
-    void setDeaths(long x)
+    void set_deaths(long x)
     {
       deaths = x;
     }
-    void setShots_fired(long x)
+    void set_shots_fired(long x)
     {
       shots_fired = x;
     }
-    void setMatch_shots(long x)
+    void set_match_shots(long x)
     {
       match_shots = x;
     }
-    void setHits(long x)
+    void set_hits(long x)
     {
       hits = x;
     }
-    long getHits()
+    long get_hits()
     {
       return hits;
     }
-    void setDamage_total(long x)
+    void set_damage_total(long x)
     {
       damage_total = x;
     }
-    void setCycles_lived(long x)
+    void set_cycles_lived(long x)
     {
       cycles_lived = x;
     }
-    void setPlen(int x)
+    void set_plen(int x)
     {
       plen = x;
     }
-    void setMax_time(int x)
+    void set_max_time(int x)
     {
       max_time = x;
     }
-    void setName(string x)
+    void set_name(string x)
     {
       name = x;
     }
-    void setFn(string x)
+    void set_fn(string x)
     {
       fn = x;
     }
@@ -119,55 +120,55 @@ class robot_rec
     {
       arc_count = x;
     }
-    void setSonar_count(int x)
+    void set_sonar_count(int x)
     {
       sonar_count = x;
     }
-    void setRobot_time_limit(int x)
+    void set_robot_time_limit(int x)
     {
       robot_time_limit = x;
     }
-    void setArmor(int x)
+    void set_armor(int x)
     {
       armor = x;
     }
-    void setRam(int c, int x)
+    void set_ram(int c, int x)
     {
       ram[c] = x;
     }
-    void setConfig_scanner(int x)
+    void set_config_scanner(int x)
     {
       config.scanner = x;
     }
-    void setConfig_weapon(int x)
+    void set_config_weapon(int x)
     {
       config.weapon = x;
     }
-    void setConfig_armor(int x)
+    void set_config_armor(int x)
     {
       config.armor = x;
     }
-    void setConfig_engine(int x)
+    void set_config_engine(int x)
     {
       config.engine = x;
     }
-    void setConfig_heatsinks(int x)
+    void set_config_heatsinks(int x)
     {
       config.heatsinks = x;
     }
-    void setConfig_shield(int x)
+    void set_config_shield(int x)
     {
       config.shield = x;
     }
-    void setConfig_mines(int x)
+    void set_config_mines(int x)
     {
       config.mines = x;
     }
-    int getArmor()
+    int get_armor()
     {
       return armor;
     }
-    void addMine()
+    void add_mine()
     {
       if (mine.size() < max_mines + 1)
       {
@@ -179,11 +180,11 @@ class robot_rec
         cout << "Too many mines";
       }
     }
-    void setMines(int x)
+    void set_mines(int x)
     {
       mines = x;
     }
-    mine_rec getMine(int index)
+    mine_rec get_mine(int index)
     {
       return mine[index];
     }

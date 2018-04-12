@@ -120,6 +120,7 @@ void init(int argc);
 void main_func();
 void shutdown();
 void delete_compile_report();
+void write_compile_report();
 void parse_param(string s);
 void bout();
 void init_bout();
@@ -127,6 +128,7 @@ string operand(int n, int m);
 string mnemonic(int n, int m);
 void reset_hardware(int n);
 void reset_software(int n);
+void init_robot(int n);
 
 
 int main(int argc, char *argv[])
@@ -381,37 +383,39 @@ void init_bout();
     robot[i].mem_watch = 128;
     reset_hardware(i);
     reset_software(i);
+    // if not graphix block in pas code
   }
 }
-void init_robot (int n)
+void init_robot(int n)
 {
   int i, j, k, l;
 
-  robot[i].setWins(0);
-  robot[i].setTrials(0);
-  robot[i].setKills(0);
-  robot[i].setDeaths(0);
-  robot[i].setShots_fired(0);
-  robot[i].setMatch_shots(0);
-  robot[i].setHits(0);
-  robot[i].setDamage_total(0);
-  robot[i].setCycles_lived(0);
-  robot[i].setError_count(0);
-  robot[i].setPlen(0);
-  robot[i].setMax_time(0);
-  robot[i].setName(" ");
-  robot[i].setFn(" ");
-  robot[i].setSpeed(0);
-  robot[i].setArc_count(0);
-  robot[i].setSonar_count(0);
-  robot[i].setRobot_time_limit(0);
-  robot[i].setScanRange(1500);
-  robot[i].setShotStrength(1);
-  robot[i].setDamageAdj(1);
-  robot[i].setSpeedAdj(1);
-  robot[i].setMines(0);
-  robot[i].setConfig_scanner(5);
+  robot[i].set_wins(0);
+  robot[i].set_trials(0);
+  robot[i].set_kills(0);
+  robot[i].set_deaths(0);
+  robot[i].set_shots_fired(0);
+  robot[i].set_match_shots(0);
+  robot[i].set_hits(0);
+  robot[i].set_damage_total(0);
+  robot[i].set_cycles_lived(0);
+  robot[i].set_error_count(0);
+  robot[i].set_plen(0);
+  robot[i].set_max_time(0);
+  robot[i].set_name(" ");
+  robot[i].set_fn(" ");
+  robot[i].set_speed(0);
+  robot[i].set_arc_count(0);
+  robot[i].set_sonar_count(0);
+  robot[i].set_robot_time_limit(0);
+  robot[i].set_scanrange(1500);
+  robot[i].set_shotstrength(1);
+  robot[i].set_damageadj(1);
+  robot[i].set_speedadj(1);
+  robot[i].set_mines(0);
+  robot[i].set_config_scanner(5);
 }
+// have to come up with a consences on syntax
 void reset_hardware(int n)
 {
   int i;
