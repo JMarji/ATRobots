@@ -383,8 +383,62 @@ void parse1(int n, int p, parsetype s)
       microcode = 0;
       found = true;
     }
+    if ((lstr(s[i], 1) == "[") && (rstr(s[i], 1) == "]"))
+    {
+      s[i] = s[i].substr(1, s[i].length() - 3);
+      indirect = true;
+    }
+
+    if ((!(found)) && (s[i][0] = "!"))
+    {
+      ss = s[i];
+      ss = btrim(rstr(ss, ss.length() - 1));
+      if (numlabels > 0)
+      {
+        for (j = 1; j <= numlabels; j++)
+        {
+          if (ss == labelname[j])
+          {
+            found = true;
+            if (labelnum[j] >= 0)
+            {
+              opcode = labelnum[j];
+              microcode = 4;
+            }
+            else
+            {
+              opcode = j;
+              microcode = 3;
+            }
+          }
+        }
+      }
+      if (!(found))
+      {
+        numlabels++;
+        labelname[numlabels] = ss;
+        labelnum[numlabels] = -1;
+        opcode = numlabels;
+        microcode = 3;
+        found = true;
+      }
+    }
+    if ((numvars > 0) && (!(found)))
+    {
+      for (j = 1; j <= numvars; j++)
+      {
+        if (s[i] == varname[j])
+        {
+          opcode = varlic[j];
+          microcode = 1;
+          found = true;
+        }
+      }
+    }
+       
   }
 }
+
 
 void bout()
 {
