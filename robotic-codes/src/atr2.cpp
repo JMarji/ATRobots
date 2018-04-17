@@ -347,6 +347,44 @@ void parse_param(string s)
 
   }
 }
+void print_code(int n, int p)
+{
+  int i;
+  cout << hex(p) << ": ";
+  for (i = 0; i <= max_op; i++)
+  {
+    cout << zero_pad(robot[n].code[p].op[i], 5) << " ";
+  }
+  cout << " =  ";
+  for (i = 0; i <= max_op; i++)
+  {
+    cout << hex(robot[n].code[p].op[i]) << "h ";
+  }
+  cout << endl << endl;
+}
+void parse1(int n, int p, parsetype s)
+{
+  int i, j, k, opcode, microcode;
+  bool found, indirect;
+  char * ss;
+
+  for (i = 0; i <= max_op - 1; i++)
+  {
+    k = 0;
+    found = false;
+    opcode = 0;
+    microcode = 0;
+    s[i] = btrim(ucase(s[i]));
+    indirect = false;
+
+    if (s[i] == " ")
+    {
+      opcode = 0;
+      microcode = 0;
+      found = true;
+    }
+  }
+}
 
 void bout()
 {
@@ -451,29 +489,29 @@ void reset_hardware(int n)
     mine[i].detect=0;
     mine[i].detonate = false;
   }
-  robot[n].lx=-1;
-  robot[n].ly=-1;
-  robot[n].hd=rand() % 256;
-  robot[n].shift=0;
-  robot[n].lhd=robot[n].hd + 1;
-  robot[n].lshift=robot[n].shift + 1;
-  robot[n].spd=0;
-  robot[n].speed=0;
-  robot[n].cooling=false;
-  robot[n].armor=100;
-  robot[n].larmor=0;
-  robot[n].heat=0;
-  robot[n].lheat=1;
-  robot[n].match_shots=0;
-  robot[n].won=false;
-  robot[n].last_damage=0;
-  robot[n].last_hit=0;
-  robot[n].transponder=n+1;
-  robot[n].meters=0;
-  robot[n].shutdown=400;
-  robot[n].shields_up=false;
-  robot[n].channel=robot[n].transponder;
-  robot[n].startkills=robot[n].kills;
+  robot[n].set_lx(-1);
+  robot[n].set_ly(-1);
+  robot[n].set_hd(rand() % 256);
+  robot[n].set_shift(0);
+  robot[n].set_lhd(robot[n].get_hd() + 1);
+  robot[n].set_lshift(robot[n].get_shift() + 1);
+  robot[n].set_spd(0);
+  robot[n].set_speed(0);
+  robot[n].set_cooling(false);
+  robot[n].set_armor(100);
+  robot[n].set_larmor(0);
+  robot[n].set_heat(0);
+  robot[n].set_lheat(1);
+  robot[n].set_match_shots(0);
+  robot[n].set_won(false);
+  robot[n].set_last_damage(0);
+  robot[n].set_last_hit(0);
+  robot[n].set_transponder(n+1);
+  robot[n].set_meters(0);
+  robot[n].set_shutdown(400);
+  robot[n].set_shields_up(false);
+  robot[n].set_channel(robot[n].get_transponder());
+  robot[n].set_startkills(robot[n].get_kills());
   robot_config(n);
 }
 void reset_software(int n)
