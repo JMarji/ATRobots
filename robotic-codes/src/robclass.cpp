@@ -8,6 +8,7 @@
 #include <fstream>
 #include <vector>
 #include "termlib.hpp"
+#include "atrlib.hpp"
 
 #define max_robot_lines 8
 #define max_ram 1023
@@ -41,8 +42,9 @@ class robot_rec
     long wins,trials,kills,deaths,startkills,shots_fired,match_shots,
     hits,damage_total,cycles_lived,error_count;
 
-    int tx[(max_robot_lines - 1)], ltx[(max_robot_lines - 1)],
-     ty[(max_robot_lines - 1)], lty[(max_robot_lines - 1)], ram[max_ram + 1]; //max_ram might be declared as max rad by mistake !!!
+    int tx[customArray(max_robot_lines, 1)], ltx[customArray(max_robot_lines, 1)],
+     ty[customArray(max_robot_lines, 1)], lty[customArray(max_robot_lines, 1)],
+     ram[max_ram + 1]; //max_ram might be declared as max rad by mistake !!!
 
     double x,y,lx,ly,xv,yv,speed,shotstrength,damageadj,speedadj,meters;
 
@@ -79,6 +81,11 @@ class robot_rec
     void set_yv(double x)
     {
       yv =x;
+    }
+    //setters for arrays
+    void add_tx(int x)
+    {
+
     }
     void set_speed(double x)
     {
@@ -166,9 +173,21 @@ class robot_rec
     {
       time_left = x;
     }
+    void set_channel(int x)
+    {
+      channel = x;
+    }
     void set_lshift(int x)
     {
       lshift = x;
+    }
+    void set_shutdown(int x)
+    {
+      shutdown = x;
+    }
+    void set_startkills(long x)
+    {
+      startkills = x;
     }
     void set_scanrange(int x)
     {
