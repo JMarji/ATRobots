@@ -74,8 +74,8 @@ int initialize(){
     exit(-1);
   }
   SDL_SetRenderDrawColor(ren, 0x00, 0x00, 0x00, 0x00);
-  wfont = TTF_OpenFont("Golden Age Shad.ttf", 60);
-  font = TTF_OpenFont("WRESTLEMANIA.ttf", 50);
+  wfont = TTF_OpenFont("resources/Golden Age Shad.ttf", 60);
+  font = TTF_OpenFont("resources/WRESTLEMANIA.ttf", 50);
 }
 
 void drawMenu(){

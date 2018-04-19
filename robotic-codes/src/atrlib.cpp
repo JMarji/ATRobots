@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <fstream>
-#include "/usr/include/boost/algorithm/string/trim.hpp"
+#include <boost/algorithm/string/trim.hpp>
 #include "atrlib.hpp"
 #define _USE_MATH_DEFINES
 #define byte uint8_t
@@ -37,10 +37,6 @@ namespace atrlib {
     }
     return (higher - lower);
   }
-  string btrim(string s1)
-  {
-    return trim(s1);
-  }
   string atrlib::ucase(string s)
   {
     int i;
@@ -63,22 +59,22 @@ namespace atrlib {
     {
       switch (num)
       {
-        case "10":
+        case 10:
           return "A";
           break;
-        case "11":
+        case 11:
           return "B";
           break;
-        case "12":
+        case 12:
           return "C";
           break;
-        case "13":
+        case 13:
           return "D";
           break;
-        case "14":
+        case 14:
           return "E";
           break;
-        case "15":
+        case 15:
           return "F";
           break;
         else
@@ -181,12 +177,10 @@ namespace atrlib {
   {
     string s;
     int k;
-
-    s = '';
     if (i > 0)
     {
       for (k = 0; k <= i; k++)
-        s = s + '';
+        s = s;
     }
     return s;
   }
@@ -194,8 +188,6 @@ namespace atrlib {
   {
     string s;
     int k;
-
-    s = '';
     if (i > 0)
     {
       for (k = 1; k <= i; k++)
@@ -206,7 +198,7 @@ namespace atrlib {
   string ltrim(string s1)
   {
     int i;
-    while ((s1.length()>0)&&(s1.substr(0,1)=" ")||(s1.substr(0,1)=#8)||(s1.substr(0,1)=#9))
+    while ((s1.length()>0) && (s1.substr(0,1)=" ") || (s1.substr(0,1)=8)||(s1.substr(0,1)=9))
     {
       s1 = s1.substr(2,s1.length()-1)
     }
@@ -215,7 +207,7 @@ namespace atrlib {
   string rtrim(string s1)
   {
     int i;
-    while ((s1.length()>0) && (s1.substr(s1.length(),1)=' ') || (s1.substr(s1.length(),1)=#8)||(s1.substr(s1.length(),1)=#9))
+    while ((s1.length()>0) && (s1.substr(s1.length(),1)=' ') || (s1.substr(s1.length(),1)=8)||(s1.substr(s1.length(),1)=9))
     {
       s1 = s1.substr(1,s1.length()-1);
     }
