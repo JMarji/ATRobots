@@ -388,7 +388,15 @@ void parse1(int n, int p, parsetype s)
       s[i] = s[i].substr(1, s[i].length() - 3);
       indirect = true;
     }
-
+   /*
+   Microcode:
+      0 = instruction, number, constant
+      1 = variable, memory access
+      2 = :label
+      3 = !label (unresolved)
+      4 = !label (resolved)
+     8h mask = inderect addressing (enclosed in [])
+   */
     if ((!(found)) && (s[i][0] = "!"))
     {
       ss = s[i];
@@ -435,7 +443,636 @@ void parse1(int n, int p, parsetype s)
         }
       }
     }
-       
+    switch (s[i])
+    {
+      //Instructions
+      case "NOP":
+           opcode = 000;
+           found = true;
+           break;
+      case "ADD":
+           opcode = 001;
+           found = true;
+           break;
+      case "SUB":
+           opcode = 002;
+           found = true;
+           break;
+      case "OR":
+           opcode = 003;
+           found = true;
+           break;
+      case "AND":
+           opcode = 004;
+           found = true;
+           break;
+      case "XOR":
+           opcode = 005;
+           found = true;
+           break;
+      case "NOT":
+           opcdoe = 006;
+           found = true;
+           break;
+      case "MPY":
+           opcode = 007;
+           found = true;
+           break;
+      case "DIV":
+           opcode = 008;
+           found = true;
+           break;
+      case "MOD":
+           opcode = 009;
+           found = true;
+           break;
+      case "RET":
+           opcode = 010;
+           found = true;
+           break;
+      case "RETURN":
+           opcode = 010;
+           found = true;
+           break;
+      case "GSB":
+           opcode = 011;
+           found = true;
+           break;
+      case "GOSUB":
+           opcode = 011;
+           found = true;
+           break;
+      case "CALL":
+           opcode = 011;
+           found = true;
+           break;
+      case "JMP":
+           opcode = 012;
+           found = true;
+           break;
+      case "JUMP":
+           opcode = 012;
+           found = true;
+           break;
+      case "GOTO":
+           opcode = 012;
+           found = true;
+           break;
+      case "JLS":
+           opcode = 012;
+           found = true;
+           break;
+      case "JB":
+           opcode = 013;
+           found = true;
+           break;
+      case "JGR":
+           opcode = 014;
+           found = true;
+           break;
+      case "JA":
+           opcode = 014;
+           found = true;
+           break;
+      case "JNE":
+           opcode = 015;
+           found = true;
+           break;
+      case "JEQ":
+           opcode = 016;
+           found = true;
+           break;
+      case "JE":
+           opcode = 016;
+           found = true;
+           break;
+      case "XCHG":
+           opcode = 017;
+           found = true;
+           break;
+      case "SWAP":
+           opcode = 017;
+           found = true;
+           break;
+      case "DO":
+           opcode = 018;
+           found = true;
+           break;
+      case "LOOP":
+           opcode = 019;
+           found = true;
+           break;
+      case "CMP":
+           opcode = 020;
+           found = true;
+           break;
+      case "TEST":
+           opcode = 021;
+           found = true;
+           break;
+      case "SET":
+           opcode = 022;
+           found = true;
+           break;
+      case "MOV":
+           opcode = 022;
+           found = true;
+           break;
+      case "LOC":
+           opcode = 023;
+           found = true;
+           break;
+      case "ADDR":
+           opcode = 023;
+           found = true;
+           break;
+      case "GET":
+           opcode = 024;
+           found = true;
+           break;
+      case "PUT":
+           opcode = 025;
+           found = true;
+           break;
+      case "INT":
+           opcode = 026;
+           found = true;
+           break;
+      case "IPO":
+           opcode = 027;
+           found = true;
+           break;
+      case "IN":
+           opcode = 027;
+           found = true;
+           break;
+      case "OPO":
+           opcode = 028;
+           found = true;
+           break;
+      case "OUT":
+           opcode = 028;
+           found = true;
+           break;
+      case "DEL":
+           opcode = 029;
+           found = true;
+           break;
+      case "DELAY":
+           opcode = 029;
+           found = true;
+           break;
+      case "PUSH":
+           opcode = 030;
+           found = true;
+           break;
+      case "POP":
+           opcode = 031;
+           found = true;
+           break;
+      case "ERR":
+           opcode = 032;
+           found = true;
+           break;
+      case "ERROR":
+           opcode = 032;
+           found = true;
+           break;
+      case "INC":
+           opcode = 033;
+           found = true;
+           break;
+      case "DEC":
+           opcode = 034;
+           found = true;
+           break;
+      case "SHL":
+           opcode = 035;
+           found = true;
+           break;
+      case "SHR":
+           opcode = 036;
+           found = true;
+           break;
+      case "ROL":
+           opcode = 037;
+           found = true;
+           break;
+      case "ROR":
+           opcode = 038;
+           found = true;
+           break;
+      case "JZ":
+           opcode = 039;
+           found = true;
+           break;
+      case "JNZ":
+           opcode = 040;
+           found = true;
+           break;
+      case "JAE":
+           opcode = 041;
+           found = true;
+           break;
+      case "JGE":
+           opcode = 041;
+           found = true;
+           break;
+      case "JLE":
+           opcode = 042;
+           found = true;
+           break;
+      case "JBE":
+           opcode = 042;
+           found = true;
+           break;
+      case "SAL":
+           opcode = 043;
+           found = true;
+           break;
+      case "SAR":
+           opcode = 044;
+           found = true;
+           break;
+      case "NEG":
+           opcode = 045;
+           found = true;
+           break;
+      case "JTL":
+           opcode = 046;
+           found = true;
+           break;
+
+      //registers
+      case "COLCNT":
+           opcode = 008;
+           microcode = 01;
+           found = true;
+           break;
+      case "METERS":
+           opcode = 009;
+           microcode = 01;
+           found = true;
+           break;
+      case "COMBASE":
+           opcode = 010;
+           microcode = 01;
+           found = true;
+           break;
+      case "COMEND":
+           opcode = 011;
+           microcode = 01;
+           found = true;
+           break;
+      case "FLAGS":
+           opcode = 064;
+           microcode = 01;
+           found = true;
+           break;
+      case "AX":
+           opcode = 065;
+           microcode = 01;
+           found = true;
+           break;
+      case "BX":
+           opcode = 066;
+           microcode = 01;
+           found = true;
+           break;
+      case "CX":
+           opcode = 067;
+           microcode = 01;
+           found = true;
+           break;
+      case "DX":
+           opcode = 068;
+           microcode = 01;
+           found = true;
+           break;
+      case "EX":
+           opcode = 069;
+           microcode = 01;
+           found = true;
+           break;
+      case "FX":
+           opcode = 070;
+           microcode = 01;
+           found = true;
+           break;
+      case "SP":
+           opcode = 071;
+           microcode = 01;
+           found = true;
+           break;
+
+      //constants
+      case "MAXINT":
+           opcode = 32767;
+           microcode = 0;
+           found = true;
+           break;
+      case "MININT":
+           opcode = -32768;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_SPEDOMETER":
+           opcode = 01;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_HEAT":
+           opcode = 02;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_COMPASS":
+           opcode = 03;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_TANGLE":
+           opcode = 04;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_TURRET_OFS":
+           opcode = 04;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_THREADING":
+           opcode = 05;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_TURRET_ABS":
+           opcode = 05;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_ARMOR":
+           opcode = 06;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_DAMAGE":
+           opcode = 06;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_SCAN":
+           opcode = 07;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_ACCURACY":
+           opcode = 08;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_RADAR":
+           opcode = 09;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_RANDOM":
+           opcode = 10;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_RAND":
+           opcode = 10;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_THROTTLE":
+           opcode = 11;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_TROTATE":
+           opcode = 12;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_OFS_TURRET":
+           opcode = 12;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_TAIM":
+           opcode = 13;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_ABS_TURRET":
+           opcode = 13;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_STEERING":
+           opcode = 14;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_WEAP"
+           opcode = 15;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_WEAPON":
+           opcode = 15;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_FIRE":
+           opcode = 15;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_SONAR":
+           opcode = 16;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_ARC":
+           opcode = 17;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_SCANARC":
+           opcode = 17;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_OVERBURN":
+           opcode = 18;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_TRANSPONDER":
+           opcode = 19;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_SHUTDOWN":
+           opcode = 20;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_CHANNEL":
+           opcode = 21;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_MINELAYER":
+           opcode = 22;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_MINETRIGGER":
+           opcode = 23;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_SHIELD":
+           opcode = 24;
+           microcode = 0;
+           found = true;
+           break;
+      case "P_SHIELDS":
+           opcode = 24;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_DESTRUCT":
+           opcode = 00;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_RESET":
+           opcode = 01;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_LOCATE":
+           opcode = 02;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_KEEPSHIFT":
+           opcode = 03;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_OVERBURN":
+           opcode = 04;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_ID":
+           opcode = 05;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_TIMER":
+           opcode = 06;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_ANGLE":
+           opcode = 07;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_TID":
+           opcode = 08;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_TARGETID":
+           opcode = 08;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_TINFO":
+           opcode = 09;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_TARGETINFO":
+           opcode = 09;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_GINFO":
+           opcode = 10;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_GAMEINFO":
+           opcode = 10;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_RINFO":
+           opcode = 11;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_ROBOTINFO":
+           opcode = 11;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_COLLISIONS":
+           opcode = 12;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_RESETCOLCNT":
+           opcode = 13;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_TRANSMIT":
+           opcode = 14;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_RECEIVE":
+           opcode = 15;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_DATAREADY":
+           opcode = 16;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_CLEARCOM":
+           opcode = 17;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_KILLS":
+           opcode = 18;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_DEATHS":
+           opcode = 18;
+           microcode = 0;
+           found = true;
+           break;
+      case "I_CLEARMETERS":
+           opcode = 19;
+           microcode = 0;
+           found = true;
+           break;
+
+    }
   }
 }
 
