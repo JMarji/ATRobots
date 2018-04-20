@@ -13,10 +13,6 @@
 #define max_robot_lines 8
 #define max_ram 1023
 #define max_mines 63
-#define txca
-#define tyca
-#define ltxca
-#define ltyca
 
 using namespace std;
 
@@ -405,7 +401,7 @@ class robot_rec
     }
     long get_shots_fired()
     {
-      return shots_fired()
+      return shots_fired;
     }
     void set_match_shots(long x)
     {
@@ -586,3 +582,5 @@ class robot_rec
     mine_rec get_mine(int index)
     {
       return mine[index];
+    }
+};
