@@ -5,8 +5,7 @@
 */
 using namespace std;
 namespace atrlib {
-  class atrlib{
-  public:
+    int customArray(int higher, int lower);
     string lstr(string s1, int l);
     string ucase(string s);
     string btrim(string s1);
@@ -38,7 +37,7 @@ namespace atrlib {
     float find_angle(float xx, float yy, float tx, float ty);
     int find_anglei(float xx, float yy, float tx, float ty);
     string bin(int n);
-    string decimal(int num, int length);    
+    string decimal(int num, int length);
     void coltextxy(int x, int y, string s, unsigned char c);
     void flushkey();
     void calibrate_timing();
@@ -52,5 +51,4 @@ namespace atrlib {
     void hole(int x1, int y1, int x2, int y2);
     void chirp();
     void click();
-  };
 }

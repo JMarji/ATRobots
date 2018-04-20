@@ -1089,6 +1089,45 @@ void bout()
 
   played++; //inc is a function that does incremntation
   init_bout();
+  bout_over=false;
+  if(step_mode == 0)
+  {
+    step_loop = false;
+  }
+  else
+  {
+    step_loop = true;
+  }
+  step_count = -1;
+  // if graphix line 2793 in atr2-term.pas
+
+  do
+  {
+    game_cycle++;
+    for(i=0; i <= num_robots; i++)
+    {
+      if(robot[i].get_armor() > 0)
+      {
+        do_robot(i);
+      }
+    }
+    for(i=0; i <= max_missiles; i++)
+    {
+      if( missile[i].a > 0)
+      {
+        do_missile(i);
+      }
+    }
+    for(i=0; i<= num_robots; i++)
+    {
+      for(k=0; k <= max_mines; k++)
+      {
+        if(robot[i].)
+      }
+    }
+  }
+
+
 }
 
 void init_bout();

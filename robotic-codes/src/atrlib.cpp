@@ -20,14 +20,14 @@ namespace atrlib {
   word reg_num;
 
 
-  string atrlib::lstr(string s1, int l){
+  string lstr(string s1, int l){
     if (s1.length() <= 1){
       return s1;
     }
     else
       return s1.substr(1,l);
   }
-  int customArray (int higher, int lower)
+  int customArray(int higher, int lower)
   {
     if (lower > higher)
     {
