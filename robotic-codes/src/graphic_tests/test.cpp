@@ -36,7 +36,9 @@ int main(int argc, char* argv[]){
 	if ( Mix_PlayMusic( music, -1) == -1 )
 		return -1;
 
-	while ( Mix_PlayingMusic() ) ;
+	while ( Mix_PlayingMusic() ) {
+		Mix_PlayChannel(-1.25, wave, 0);
+	}
 
 	// clean up our resources
 	Mix_FreeChunk(wave);

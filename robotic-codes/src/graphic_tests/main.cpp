@@ -5,10 +5,13 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
 #include <SDL2/SDL_ttf.h>
+#include <SDL2/SDL_mixer.h>
 
 #define SC_WIDTH 1240
 #define SC_HEIGHT 1024
 #define WINDOW_NAME "Robotic Codes"
+#define WAV_PATH "resources/yeah.wav"
+#define MUS_PATH "resources/game.ogg"
 
 int initialize();
 void drawMenu();
@@ -22,6 +25,8 @@ void dButton(int x1, int y1, int x2, int y2, char *label);
 void dBRect(int x1, int y1, int x2, int y2);
 void drawLabel(int x, int y, int w, int h, char *label);
 void drawstat(int x);
+Mix_Chunk *wave = NULL;
+Mix_Music *music = NULL;
 
 int main(int argc, char* argv[]){
   if (!initialize())
@@ -31,6 +36,12 @@ int main(int argc, char* argv[]){
   SDL_SetRenderDrawColor(ren, 0x00, 0x00, 0x00, 0x00);
   SDL_RenderClear(ren);
   drawMenu();
+  if ( Mix_PlayChannel(-1, wave, 0) == -1 )
+		return -1;
+
+	if ( Mix_PlayMusic( music, -1) == -1 )
+		return -1;
+
   while (!quit_status){ // While loop for running
     while (SDL_PollEvent(&event) != 0){ // handle input
       if (event.type == SDL_QUIT)
@@ -45,6 +56,11 @@ int main(int argc, char* argv[]){
     usleep(500);
   }
   //Time to quit
+  Mix_FreeChunk(wave);
+	Mix_FreeMusic(music);
+
+	// quit SDL_mixer
+	Mix_CloseAudio();
   TTF_CloseFont(font);
   SDL_DestroyRenderer(ren);
   SDL_DestroyWindow(win);
@@ -56,6 +72,10 @@ int main(int argc, char* argv[]){
 
 int initialize(){
   int result = 0;
+  if (SDL_Init(SDL_INIT_AUDIO) < 0)
+		return -1;
+  if( Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 )
+		result = -1;
   if (TTF_Init() == -1){
     fprintf(stderr, "%s\n", "Couldn't initialize TTF font system.");
     exit(-1);
@@ -76,6 +96,13 @@ int initialize(){
   SDL_SetRenderDrawColor(ren, 0x00, 0x00, 0x00, 0x00);
   wfont = TTF_OpenFont("resources/Golden Age Shad.ttf", 60);
   font = TTF_OpenFont("resources/WRESTLEMANIA.ttf", 50);
+  wave = Mix_LoadWAV(WAV_PATH);
+	if (wave == NULL)
+		return -1;
+	// Load our music
+	music = Mix_LoadMUS(MUS_PATH);
+	if (music == NULL)
+		return -1;
 }
 
 void drawMenu(){
