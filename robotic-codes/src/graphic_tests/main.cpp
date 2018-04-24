@@ -10,8 +10,11 @@
 #define SC_WIDTH 1240
 #define SC_HEIGHT 1024
 #define WINDOW_NAME "Robotic Codes"
-#define WAV_PATH "resources/yeah.wav"
-#define MUS_PATH "resources/game.ogg"
+#define YAH_PATH "resources/yeah.wav"
+#define MUS_PATH "resources/cantina.ogg"
+#define WSH_PATH "resources/swoosh.wav"
+#define CLK_PATH "resources/click.wav"
+#define SKR_PATH "resources/scream.wav"
 
 int initialize();
 void drawMenu();
@@ -20,13 +23,19 @@ SDL_Window* win = NULL;
 SDL_Renderer* ren = NULL;
 TTF_Font *font = NULL;
 TTF_Font *wfont = NULL;
+bool settings[5] = {0, 0, 0, 0, 0};
+Mix_Chunk *yah = NULL;
+Mix_Music *music = NULL;
+Mix_Chunk *wsh = NULL;
+Mix_Chunk *clk = NULL;
+Mix_Chunk *skr = NULL;
 void dGrayRect(int x1, int y1, int x2, int y2);
 void dButton(int x1, int y1, int x2, int y2, char *label);
 void dBRect(int x1, int y1, int x2, int y2);
 void drawLabel(int x, int y, int w, int h, char *label);
-void drawstat(int x);
-Mix_Chunk *wave = NULL;
-Mix_Music *music = NULL;
+void drawstat();
+void plays(Mix_Chunk *snd);
+void moused(int x, int y);
 
 int main(int argc, char* argv[]){
   if (!initialize())
@@ -36,27 +45,27 @@ int main(int argc, char* argv[]){
   SDL_SetRenderDrawColor(ren, 0x00, 0x00, 0x00, 0x00);
   SDL_RenderClear(ren);
   drawMenu();
-  if ( Mix_PlayChannel(-1, wave, 0) == -1 )
-		return -1;
-
-	if ( Mix_PlayMusic( music, -1) == -1 )
-		return -1;
+  Mix_PlayMusic( music, -1);
 
   while (!quit_status){ // While loop for running
     while (SDL_PollEvent(&event) != 0){ // handle input
       if (event.type == SDL_QUIT)
         quit_status = true;
-      if (event.type == SDL_MOUSEBUTTONUP)
-        drawstat(0);
-      if (event.type == SDL_MOUSEBUTTONDOWN)
-        drawstat(255);
+      if (event.type == SDL_MOUSEBUTTONUP){
+      }
+      if (event.type == SDL_MOUSEBUTTONDOWN){
+        moused(event.motion.x, event.motion.y);
+      }
     }
     // Show things
     SDL_RenderPresent(ren);
     usleep(500);
   }
   //Time to quit
-  Mix_FreeChunk(wave);
+  Mix_FreeChunk(yah);
+  Mix_FreeChunk(wsh);
+  Mix_FreeChunk(clk);
+  Mix_FreeChunk(skr);
 	Mix_FreeMusic(music);
 
 	// quit SDL_mixer
@@ -96,13 +105,12 @@ int initialize(){
   SDL_SetRenderDrawColor(ren, 0x00, 0x00, 0x00, 0x00);
   wfont = TTF_OpenFont("resources/Golden Age Shad.ttf", 60);
   font = TTF_OpenFont("resources/WRESTLEMANIA.ttf", 50);
-  wave = Mix_LoadWAV(WAV_PATH);
-	if (wave == NULL)
-		return -1;
-	// Load our music
+  yah = Mix_LoadWAV(YAH_PATH);
+  wsh = Mix_LoadWAV(WSH_PATH);
+  clk = Mix_LoadWAV(CLK_PATH);
+  skr = Mix_LoadWAV(SKR_PATH);
 	music = Mix_LoadMUS(MUS_PATH);
-	if (music == NULL)
-		return -1;
+  Mix_VolumeMusic(64);
 }
 
 void drawMenu(){
@@ -148,6 +156,7 @@ void drawMenu(){
   for (int i=0; i<5; i++){
     dButton(50, (530+(i*80)), 400, 60, options[i]);
   }
+  drawstat();
 }
 
 void dGrayRect(int x1, int y1, int x2, int y2){
@@ -194,6 +203,37 @@ void drawLabel(int x, int y, int w, int h, char *label){
   SDL_FreeSurface(messg);
 }
 
-void drawstat(int x){
-  filledCircleRGBA(ren, 800, 800, 50, x, 0, 0, 255);
+void drawstat(){
+  for (int x=0; x<5; x++){
+    if (settings[x]){
+      filledCircleRGBA(ren, 525, (555+(x*80)), 25, 255, 255, 255, 255);
+    }else{
+      filledCircleRGBA(ren, 525, (555+(x*80)), 25, 0, 0, 0, 255);
+      circleRGBA(ren, 525, (555+(x*80)), 25, 255, 255, 255, 255);
+    }
+  }
+}
+
+void plays(Mix_Chunk *snd){
+  Mix_PlayChannel(-1, snd, 0);
+}
+
+void moused(int x, int y){
+  if (x > 50 && x < 400){
+    for (int i=0; i<5; i++){
+      if (y > (530+(i*80)) && y < (590+(i*80))){
+        settings[i] = !settings[i];
+        plays(clk);
+      }
+    }
+    drawstat();
+  }
+  if (y > 925 && y < 985){
+    if (x > 70 && x < 600){
+      // clicked QUIT
+      plays(skr);
+      //while ()
+      //quit_status = true;
+    }
+  }
 }
