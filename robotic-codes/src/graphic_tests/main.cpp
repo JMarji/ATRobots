@@ -23,7 +23,7 @@ SDL_Window* win = NULL;
 SDL_Renderer* ren = NULL;
 TTF_Font *font = NULL;
 TTF_Font *wfont = NULL;
-bool settings[5] = {0, 0, 0, 0, 0};
+bool settings[5] = {0, 0, 1, 0, 0};
 Mix_Chunk *yah = NULL;
 Mix_Music *music = NULL;
 Mix_Chunk *wsh = NULL;
@@ -45,7 +45,8 @@ int main(int argc, char* argv[]){
   SDL_SetRenderDrawColor(ren, 0x00, 0x00, 0x00, 0x00);
   SDL_RenderClear(ren);
   drawMenu();
-  Mix_PlayMusic( music, -1);
+  // Show things
+  //Mix_PlayMusic( music, -1);
 
   while (!quit_status){ // While loop for running
     while (SDL_PollEvent(&event) != 0){ // handle input
@@ -57,9 +58,7 @@ int main(int argc, char* argv[]){
         moused(event.motion.x, event.motion.y);
       }
     }
-    // Show things
-    SDL_RenderPresent(ren);
-    usleep(500);
+    // old sleep usleep(500);
   }
   //Time to quit
   Mix_FreeChunk(yah);
@@ -157,6 +156,7 @@ void drawMenu(){
     dButton(50, (530+(i*80)), 400, 60, options[i]);
   }
   drawstat();
+  SDL_RenderPresent(ren);
 }
 
 void dGrayRect(int x1, int y1, int x2, int y2){
@@ -226,14 +226,17 @@ void moused(int x, int y){
         plays(clk);
       }
     }
-    drawstat();
+    drawMenu();
   }
   if (y > 925 && y < 985){
     if (x > 70 && x < 600){
       // clicked QUIT
       plays(skr);
-      //while ()
-      //quit_status = true;
+      usleep(1000);
+      quit_status = true;
+    }else if (x > 780 && x < 990){
+      //Clicked play
+      
     }
   }
 }
